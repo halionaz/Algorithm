@@ -3,9 +3,9 @@
 
 N,S = map(int,input().split())
 arr = list(map(int,input().split()))
-i,j = 0,1
+i,j = 0,0
 ans = N+1
-tmp = arr[0]+arr[1]
+tmp = arr[0]
 while True :
     if tmp < S :
         if j+1 < N :
