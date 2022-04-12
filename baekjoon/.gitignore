@@ -1,6 +1,6 @@
 *
 !.gitignore
-!.cpp
-!.c
-!.py
+!*.cpp
+!*.c
+!*.py
 !/Contest
