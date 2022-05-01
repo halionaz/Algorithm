@@ -13,12 +13,23 @@ std::string arr[5] = {"\"재귀함수가 뭔가요?\"\n",
                       };
 
 std::string ending[3] = {
-    "____\"재귀함수가 뭔가요?\"\n",
-    "____\"재귀함수는 자기 자신을 호출하는 함수라네\"\n",
-    "____라고 답변하였지.\n"
+    "\"재귀함수가 뭔가요?\"\n",
+    "\"재귀함수는 자기 자신을 호출하는 함수라네\"\n",
+    "라고 답변하였지.\n"
 };
 
 void func(int depth){
+
+    if(depth == N){
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < depth; j++){
+                std::cout << "____";
+            }
+
+            std::cout << ending[i];
+        }
+        return;
+    }
 
     for(int i = 0; i < 5; i++){
         for(int j = 0; j < depth; j++){
@@ -26,19 +37,7 @@ void func(int depth){
         }
         std::cout << arr[i];
         if(i == 3){
-            if(depth == N-1){
-
-                for(int k = 0; k < 3; k++){
-                    for(int j = 0; j < depth; j++){
-                        std::cout << "____";
-                    }
-
-                    std::cout << ending[k];
-                }
-                
-            } else {
-                func(depth+1);
-            }
+            func(depth+1);
         }
     }
 }
