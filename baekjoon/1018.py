@@ -7,10 +7,9 @@ board = []
 for i in range(inp[0]) :
     board.append(input())
 
-min = 64
+ans = 64
 for i in range(inp[0]-7) :
     for j in range(inp[1]-7) :
-        case = 0
         case1 = 0 # 가장 왼쪽 위가 B인 case
         case2 = 0 # 가장 왼쪽 위가 W인 case
         for l in range(8) :
@@ -25,12 +24,7 @@ for i in range(inp[0]-7) :
                         case2 += 1
                     else :
                         case1 += 1
-        if case1 > case2 :
-            case = case2
-        else : 
-            case = case1
-        if case < min :
-            min = case
-print(min)
+        ans = min(ans, case1, case2)
+print(ans)
 
         
