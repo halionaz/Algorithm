@@ -11,8 +11,8 @@ min = 64
 for i in range(inp[0]-7) :
     for j in range(inp[1]-7) :
         case = 0
-        case1 = 0
-        case2 = 0
+        case1 = 0 # 가장 왼쪽 위가 B인 case
+        case2 = 0 # 가장 왼쪽 위가 W인 case
         for l in range(8) :
             for m in range(8) :
                 if (l+m)%2 == 0 :
