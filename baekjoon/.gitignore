@@ -3,4 +3,6 @@
 !*.cpp
 !*.c
 !*.py
-!/Contest
+!Contest/
+!Contest/*.cpp
+!Contest/*.py
