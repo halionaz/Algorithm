@@ -1,3 +1,6 @@
+# 한별 찍기
+# 구현
+
 print("""                                                           :8DDDDDDDDDDDDDD$.                                           
                                                       DDDNNN8~~~~~~~~~~=~7DNNDNDDDNNI                                   
                                                   ?NNDD=~=~~~~~~~~~~~~~~~~~=~~==~=INNDNN7                               

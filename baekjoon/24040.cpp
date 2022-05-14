@@ -1,3 +1,6 @@
+// 예쁜 케이크
+// 수학 & 정수론
+
 #include <iostream>
 #include <cmath>
 #include <algorithm>

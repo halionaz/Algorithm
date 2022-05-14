@@ -1,4 +1,5 @@
 // 중앙값 제거
+// 그리디 알고리즘 & 정렬
 
 #include<iostream>
 #include <queue>
