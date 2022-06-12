@@ -1,5 +1,5 @@
 // 케빈 베이컨의 6단계 법칙
-// 플로이드-와샬
+// 플로이드-워셜
 
 #include <iostream>
 #include <cstring>

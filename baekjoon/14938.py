@@ -1,5 +1,5 @@
 # 서강그라운드
-# 플로이드-와샬 
+# 플로이드-워셜 
 
 import sys
 import math

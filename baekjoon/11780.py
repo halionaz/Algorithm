@@ -1,5 +1,5 @@
 # 플로이드 2
-# 플로이드-와샬
+# 플로이드-워셜
 
 import sys
 input = sys.stdin.readline
