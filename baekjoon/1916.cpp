@@ -1,5 +1,5 @@
 // 최소비용 구하기
-// 다익스트라
+// 데이크스트라
 
 #include <iostream>
 #include <vector>

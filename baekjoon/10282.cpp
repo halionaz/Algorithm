@@ -1,5 +1,5 @@
 // 해킹
-// 다익스트라
+// 데이크스트라
 
 #include <iostream>
 #include <vector>

@@ -1,5 +1,5 @@
 # KCM Travel
-# 다익스트라
+# 데이크스트라
 
 import sys
 input = sys.stdin.readline

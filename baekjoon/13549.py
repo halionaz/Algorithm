@@ -1,5 +1,5 @@
 # 숨바꼭질 3
-# 너비 우선 탐색 & 0-1 너비 우선 탐색 & 다익스트라
+# 너비 우선 탐색 & 0-1 너비 우선 탐색 & 데이크스트라
 
 from queue import PriorityQueue
 N,K = map(int,input().split())

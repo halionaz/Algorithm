@@ -1,5 +1,5 @@
 # 파티
-# 다익스트라
+# 데이크스트라
 
 import sys
 import heapq
