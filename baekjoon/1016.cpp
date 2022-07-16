@@ -16,6 +16,7 @@ int main(){
             mult++;
         }
         while(mult*(i*i) <= max){
+            // 현재 검사 중인 제곱수의 배수들도 검사
             if(isJegopNoNo[mult*(i*i)-min]){
                 isJegopNoNo[mult*(i*i)-min] = false;
                 ans--;

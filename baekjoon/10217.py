@@ -1,5 +1,5 @@
 # KCM Travel
-# 데이크스트라
+# 데이크스트라 & 다이나믹 프로그래밍
 
 import sys
 input = sys.stdin.readline

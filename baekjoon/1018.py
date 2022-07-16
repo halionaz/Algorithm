@@ -26,5 +26,3 @@ for i in range(inp[0]-7) :
                         case1 += 1
         ans = min(ans, case1, case2)
 print(ans)
-
-        
