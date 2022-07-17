@@ -42,6 +42,7 @@ int main(){
             int cur = pq.top().second;
             pq.pop();
             if(memo[cur] < dist){
+                // 다른 노드를 경유하는 더 빠른 길을 이미 찾음
                 continue;
             }
             for(int i = 0; i < line[cur].size(); i++){

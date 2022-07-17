@@ -6,11 +6,12 @@
 
 int N;
 int cost[16][16];
-int dp[16][1 << 17][10]; // dp[i][j][k], i번에게 그림이 있고, j만큼 돌았으며, k가 마지막 거래 금액
+int dp[16][1 << 17][10]; // dp[i][j][k], i번에게 그림이 있고, j만큼 돌았으며, k가 마지막 거래 금액일 때 거쳐간 인원 수 최댓값
 
 int solve(int cur, int curBit, int lastCost){
     int &res = dp[cur][curBit][lastCost];
     if(curBit == (1 << N) - 1){
+        // 모든 사람이 그림을 소유했던 적이 있으므로 더 이상의 탐색 불필요
         return res = 1;
     } else {
         if(res != 0){

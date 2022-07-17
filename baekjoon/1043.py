@@ -29,8 +29,10 @@ for _ in range(M) :
     if p[0] == 1 :
         continue
     for i in range(p[0]-1) :
+        # 같은 파티로 묶여있는 사람들 union 시키기
         union(p[1+i],p[2+i])
 if T[0] == 0 :
+    # 진실을 아는 사람이 없으므로, 모든 파티에서 거짓말 가능
     print(M)
 elif T[0] == 1:
     ans = 0
