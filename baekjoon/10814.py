@@ -1,6 +1,9 @@
 # 나이순 정렬
 # 정렬
 
+# python은 정렬을 timsort를 쓰기에 stable(같은 요소의 경우 원래 순서를 유지)함
+# 이를 이용한 풀이
+
 import sys
 
 N = int(sys.stdin.readline())

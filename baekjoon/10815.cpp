@@ -62,6 +62,7 @@ int search(ll val){
             m = (s+e)/2;
 
             if(val == arr[m]){
+                // 찾으면 1 반환
                 return 1;
             } else if (val > arr[m]){
                 s = m + 1;
@@ -71,6 +72,7 @@ int search(ll val){
 
         }
     }
+    // 없으면 0 반환
     return 0;
 }
 
@@ -87,6 +89,7 @@ int main(){
         arr.push_back(inp);
     }
 
+    // 이분 탐색을 위한 정렬
     sort(arr.begin(),arr.end());
 
     cin >> M;
