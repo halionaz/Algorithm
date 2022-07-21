@@ -37,6 +37,7 @@ def binSearch(arr, i, start, end) :
         mid = (start + end) // 2
         if arr[mid] == i :
             cnt = 1
+            # mid로부터 큰 쪽에 같은 것이 있는지 체크
             j = 0
             while mid + j <= end :
                 if arr[mid+j] != i :
@@ -44,6 +45,7 @@ def binSearch(arr, i, start, end) :
                 else :
                     j += 1
             cnt += j-1
+            # mid로부터 작은 쪽에 같은 것이 있는지 체크 
             j = 0
             while mid - j >= start :
                 if arr[mid-j] != i :
