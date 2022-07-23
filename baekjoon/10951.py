@@ -1,4 +1,4 @@
-# A+B - 5
+# A+B - 4
 # 사칙연산
 
 while True :
