@@ -22,6 +22,7 @@ int solve(int onCnt, int curBit){
                     // 켜져 있다면
                     for(int j = 0; j < N; j++){
                         if(i!=j && !(curBit & (1<<j))){
+                            // 안 켜져 있는 j 발전소를 i 발전소로 키는 경우 계산
                             dp[curBit] = std::min(dp[curBit], cost[i][j] + solve(onCnt+1, curBit | (1<<j)));
                         }
                     }
@@ -47,8 +48,8 @@ int main(){
         }
     }
 
-    int onCnt = 0;
-    int curBit = 0;
+    int onCnt = 0; // 켜져있는 발전소 개수
+    int curBit = 0; // 발전소 on/off 여부 표시 bit
 
     for(int i = 0; i < N; i++){
         char inp;
@@ -58,18 +59,23 @@ int main(){
             curBit = curBit | (1 << i);
         }
     }
+
     std::cin >> P;
 
     if(onCnt){
         if(onCnt >= P){
+            // 이미 필요 이상의 발전소가 켜져있음
             std::cout << 0 << '\n';
         } else {
             std::cout << solve(onCnt, curBit) << '\n';
         }
     } else {
         if(P){
+            // 처음에 켜져있는 발전소는 없는데 켜져야할 발전소는 1이상임
+            // 불가능
             std::cout << -1 <<'\n';
         } else {
+            // 발전소 못키긴 하는데 키지 않아도 됨
             std::cout << 0 << '\n';
         }
     }

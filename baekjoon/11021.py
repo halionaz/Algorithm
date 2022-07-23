@@ -8,4 +8,4 @@ for i in range(T) :
     case.append(input().split())
 
 for i in range(len(case)) :
-    print("Case #{}: {} + {} = {}".format(i+1,case[i][0],case[i][1],int(case[i][0])+int(case[i][1])))
+    print("Case #{}: {}".format(i+1,int(case[i][0])+int(case[i][1])))
