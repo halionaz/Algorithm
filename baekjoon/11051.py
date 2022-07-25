@@ -11,4 +11,4 @@ for i in range(2,N+1) :
         arr.append(pt[i-1][j]+pt[i-1][j+1])
     arr.append(1)
     pt.append(arr)
-print(pt[N][K])
+print(pt[N][K]%10007)

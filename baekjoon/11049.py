@@ -8,6 +8,7 @@ arr = []
 for _ in range(N) :
     arr.append(list(map(int,input().split())))
 memo = [[0]*N for _ in range(N)]
+# memo[i][j] :: i~j까지의 행렬곱을 할 때 최소 연산 수
 for x in range(1,N) :
     for i in range(N-x) :
         j = i+x

@@ -11,7 +11,8 @@ for _ in range(T) :
     for i in range(1,K+1) :
         S[i] = S[i-1] + C[i-1]
     memo = [[0]*K for _ in range(K)]
-    for x in range(1,K) : #GAP
+    # memo[i][j] :: i~j까지를 합치는 최소 비용
+    for x in range(1,K) : # GAP
         for i in range(K-x) :
             j = x + i
             memo[i][j] = 9999999999999
