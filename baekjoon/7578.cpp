@@ -7,14 +7,11 @@
 
 #include <iostream>
 #include <cmath>
-#include <utility>
 #include <vector>
-#include <algorithm>
 
 int N, a;
 int firstRow[1000001];
 std::vector<long long> arr;
-std::vector<std::pair<int, int> > line;
 std::vector<long long> segTree;
 
 long long updateTree(int node, int s, int e, int ind, int diff){
