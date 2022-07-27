@@ -41,11 +41,14 @@ int main(){
 
     depth[1] = 0;
 
+    // line을 기반으로 트리 구조를 만들어줌
+    // (각 노드의 깊이와, parents[0] 지정)
     makeTree(1);
 
     for(int i = 0; i < log; i++){
         for(int j = 1; j <= N; j++){
             if(parents[i][j] != -1){
+                // 여러 단계의 parents 구조를 저장해줌
                 parents[i+1][j] = parents[i][parents[i][j]];
             }
         }
@@ -57,6 +60,7 @@ int main(){
         int a,b;
         std::cin >> a >> b;
         if(depth[a] < depth[b]){
+            // 항상 a의 깊이가 b보다 크게 설정
             int tmp = a;
             a = b;
             b = tmp;
@@ -64,6 +68,7 @@ int main(){
         int dist = depth[a] - depth[b];
         int ind = 0;
         while(dist){
+            // a와 b의 깊이를 맞춰주는 단계
             if(dist%2){
                 a = parents[ind][a];
             }

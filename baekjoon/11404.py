@@ -11,6 +11,7 @@ for _ in range(m) :
     a,b,c = map(int,input().split())
     dp[a][b] = min(c,dp[a][b])
 for x in range(1,n+1) :
+    # x를 경유하는 경우
     for i in range(1,n+1) :
         for j in range(1,n+1) :
             if i != j :

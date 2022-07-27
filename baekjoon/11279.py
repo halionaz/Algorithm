@@ -1,6 +1,8 @@
 # 최대 힙
 # 우선순위 큐
 
+# 트리를 이용해 우선순위 큐 구현
+
 import sys
 input = sys.stdin.readline
 N = int(input())
