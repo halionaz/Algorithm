@@ -1,6 +1,9 @@
 // 통나무 건너뛰기
 // 그리디 알고리즘
 
+// 길이를 받은 후 정렬하여 양 쪽에 하나씩 번갈아가며 배치하면 답이 되는 문제
+// 증가하다가 감소하는 피라미드 형식의 배치를 하면 됨
+
 #include <cstdlib>
 #include <iostream>
 #include <algorithm>

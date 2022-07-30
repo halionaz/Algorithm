@@ -80,7 +80,7 @@ int main(){
             inpArr[b-1] = c;
             updateTree(1,0,N-1,b-1,c);
         } else {
-            // 요소의 합 출력
+            // 요소의 곱 출력
             std::cout << returnMult(1,0,N-1, b-1, c-1) << '\n';
         }
     }
