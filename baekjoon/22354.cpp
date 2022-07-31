@@ -24,6 +24,9 @@ int weight[300001];
 std::vector<int> realArr;
 
 int main() {
+
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
     
     std::cin >> N;
     std::cin >> color;
