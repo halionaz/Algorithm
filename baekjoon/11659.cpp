@@ -5,7 +5,7 @@
 
 int N,M;
 int numArr[100001];
-int sumDP[100001];
+int sumDP[100001]; // sumDP[i] :: 1~i까지의 누적합
 
 int main(){
 

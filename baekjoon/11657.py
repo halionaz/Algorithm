@@ -19,6 +19,8 @@ for i in range(N) :
             if memo[a] + c < memo[b] :
                 memo[b] = memo[a]+c
                 if i == N-1 :
+                    # 음수 간선 순환 발생
+                    # 무한히 돌면 계속해서 작아짐
                     isPossible = 0
 if isPossible :
     for i in range(2,N+1) :
