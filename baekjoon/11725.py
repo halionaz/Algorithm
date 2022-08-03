@@ -13,6 +13,8 @@ for _ in range(N-1) :
 parent = [0]*(N+1)
 parent[1] = 1
 
+# 깊이 우선 탐색은 재귀를 너무 많이 해야 함
+
 # sys.setrecursionlimit(999999999)
 # def dfs(start) :
 #     for i in line[start] :

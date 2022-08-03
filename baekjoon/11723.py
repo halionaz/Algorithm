@@ -77,6 +77,9 @@ for _ in range(M) :
     elif inp[0] == 'toggle' :
         S = S^(1<<int(inp[1])-1)
     elif inp[0] == 'all' :
+        # 전부 set 내 존재하는 것으로 바꿈
         S = 0b11111111111111111111
     else :
+        # "empty"
+        # 전부 set 내 존재하지 않는 것으로 바꿈
         S = 0

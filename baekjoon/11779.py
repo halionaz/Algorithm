@@ -1,6 +1,9 @@
 # 최소비용 구하기 2
 # 데이크스트라
 
+# py_output_at_once
+# 리스트 한번에 일괄 출력하기
+
 from sys import stdin
 import heapq
 input = stdin.readline
