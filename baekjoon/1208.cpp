@@ -15,7 +15,7 @@
 
 int N, S;
 int arr[40];
-std::map<int, int> mp;
+std::map<int, int> mp; // mp[i] :: 배열의 앞쪽에서, 합이 i인 부분 수열의 개수
 long long ans = 0;
 
 void leftSum(int ind, int sum){
