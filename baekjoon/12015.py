@@ -1,6 +1,8 @@
 # 가장 긴 증가하는 부분 수열 2
 # 이분 탐색 & 가장 긴 증가하는 부분 수열: o(n log n)
 
+# 이분 탐색 파트를 직접 구현한 버전은 12738.py 풀이에서 볼 수 있음
+
 from bisect import bisect_left
 N = int(input())
 A = list(map(int,input().split()))

@@ -1,6 +1,8 @@
 # 가장 긴 증가하는 부분 수열 3
 # 이분 탐색 & 가장 긴 증가하는 부분 수열: o(n log n)
 
+# 12015.py에서, 이분 탐색 파트를 직접 구현함
+
 N = int(input())
 A = list(map(int,input().split()))
 LIS = []
@@ -26,5 +28,6 @@ for i in A :
     if length :
         binarySearch(0,length-1,i)
     else :
+        # 아무 요소가 없으므로, 일단 추가
         LIS.append(i)
 print(len(LIS))
