@@ -1,6 +1,9 @@
 // 커피숍2
 // 세그먼트 트리
 
+// 전형적인 세그먼트 트리 입문 문제
+// 부분합을 저장하는 세그먼트 트리
+
 #include <iostream>
 #include <vector>
 #include <cmath>
