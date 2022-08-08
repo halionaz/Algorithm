@@ -1,5 +1,5 @@
 // 마법의 단어
-// KMP & 브루트포스 알고리즘
+// kmp & 브루트포스 알고리즘
 
 #include <iostream>
 #include <string>
