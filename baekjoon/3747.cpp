@@ -1,6 +1,8 @@
 // 완벽한 선거!
 // 2-sat & 강한 연결 요소
 
+// inf_input
+
 // 내 알고리즘
 
 // #include <iostream>
