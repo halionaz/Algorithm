@@ -1,6 +1,8 @@
 // 광고
 // kmp
 
+// 실패 함수 이용하는 문제
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -31,6 +33,7 @@ int main(){
     cin >> L;
     cin >> s;
     vector<int> pi = getPartialMatch(s);
+    // pi[i] :: s[0:i+1]에서 prefix와 suffix가 같을 길이
     cout << L-pi[L-1] << '\n';
     return 0;
 }

@@ -17,8 +17,11 @@ for _ in range(N) :
 dp = [math.inf]*(1<<N) #dp[1011] = 1,3,4번 일은 진행중, 2번일 미진행중
 dp[0] = 0
 for i in range(1<<N) :
+    # 진행한 일 개수 세기 (이번에 일을 시킬 사람 정하기)
     k = bitCount(i)
     for j in range(N) :
+        # j번째 일 진행
         if not i & (1<<j) :
+            # j번째 일을 k번째 사람한테 시키는 경우 상정
             dp[i|1<<j] = min(dp[i|1<<j],dp[i]+W[k][j])
 print(dp[-1])
