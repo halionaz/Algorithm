@@ -28,7 +28,7 @@ int main(){
     std::cin >> S;
     std::vector<int> pi = getPi(S);
     int N = S.length();
-    std::string checkS = S.substr(1,N-2);
+    std::string checkS = S.substr(1,N-2); // 문자열 중간 추출
     int L = pi[N-1];
     while(L){
         std::string p = S.substr(0,L);
@@ -40,12 +40,13 @@ int main(){
             if(checkS[j] == p[matched]){
                 matched++;
                 if(matched == L){
+                    // 중간 문자열에서도 패턴 찾음!
                     std::cout << p << '\n';
                     return 0;
                 }
             }
         }
-        L = pi[L-1];
+        L = pi[L-1]; // 그 다음 후보 탐색
     }
     std::cout << -1 <<'\n';
     return 0;
