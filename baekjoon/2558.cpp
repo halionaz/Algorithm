@@ -10,4 +10,7 @@ int main(){
     std::cin >> A >> B;
 
     std::cout << A+B << '\n';
+
+    return 0;
+    
 }
