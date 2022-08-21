@@ -43,11 +43,12 @@ int main(){
     int ansInd = 0;
     int kevin = 99999999;
     for(int i = 1; i <= N; i++){
-        int sum = 0;
+        int sum = 0; // i번째 사람의 케빈베이컨 수
         for(int j = 1; j <= N; j++){
             sum += grid[i][j];
         }
         if(sum < kevin){
+            // 그 전 답 갱신
             ansInd = i;
             kevin = sum;
         }

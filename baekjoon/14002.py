@@ -1,6 +1,8 @@
 # 가장 긴 증가하는 부분 수열 4
 # 다이나믹 프로그래밍
 
+# py_output_at_once
+
 N = int(input())
 A = list(map(int,input().split()))
 dp = [[1,-1]]*N
@@ -22,11 +24,11 @@ for i in reversed(range(N)) :
             ansInd = i
             ans = dp[i][0]
 ind = ansInd
-arr = ''
+arr = []
 while True :
-    arr = str(A[ind]) + ' ' + arr
+    arr.append(A[ind])
     ind = dp[ind][1]
     if ind == -1 :
         break
 print(ans)
-print(arr)
+print(*arr[::-1])
