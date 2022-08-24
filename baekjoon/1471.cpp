@@ -17,7 +17,7 @@
 const int inf = 1<<29;
 
 int N, ans = 0;
-int dp[200001];
+int dp[200001]; // dp[i] :: i번 노드를 순환하는 사이클 칸 수
 bool visited[200001];
 std::stack<int> stck;
 
@@ -64,7 +64,7 @@ int dfs(int cur){
             tmp /= 10;
         }
         int next = (cur + j)%N;
-        if(!next){
+        if(next == 0){
             next = N;
         }
 
@@ -73,7 +73,7 @@ int dfs(int cur){
         // 다음 노드로 dfs 진행
         // 사이클이 생기므로 dp[cur]에 값이 들어옴
         if(dp[cur] == inf){
-            // 사이클이 안 생긴 경우
+            // 사이클이 안 생긴 경우 (cur에서 시작해서 사이클에 진입했으나, 정작 cur은 사이클에 속하지 않을 수 있음)
             dp[cur] = val + 1;
             stck.pop();
         }

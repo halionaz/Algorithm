@@ -12,6 +12,7 @@ dx = [1,0,0,-1]
 dy = [0,-1,1,0]
 ans = 0
 def bfs() :
+    # 안전지대 체크
     global ans
     AS = [[0]*M for _ in range(N)]
     queue = deque([])

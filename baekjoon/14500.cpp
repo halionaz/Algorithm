@@ -14,6 +14,7 @@ int ans = 0;
 
 void dfs(int x, int y, int depth){
     if(depth == 4){
+        // 테크로미노 합 최댓값 갱신
         ans = visited[x][y] > ans ? visited[x][y] : ans;
         return;
     } else {
@@ -32,6 +33,7 @@ void dfs(int x, int y, int depth){
 }
 
 void unique(int x, int y){
+    // ㅗ, ㅜ, ㅓ, ㅏ 모양 표현
     for(int i = 0; i < 4; i++){
         int temp = paper[x][y];
         int canMake = 1;
