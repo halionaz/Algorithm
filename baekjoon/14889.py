@@ -1,16 +1,15 @@
 # 스타트와 링크
-# 백트래킹
-
-# 일단은 항복
+# 백트래킹 & 브루트포스 알고리즘
 
 import sys
 N = int(sys.stdin.readline())
 tab = [list(map(int,sys.stdin.readline().split())) for _ in range(N)]
 member = [False]*N
-ans = None
+ans = 100000
 def dfs(last,depth) :
     global ans
-    if depth == N//2 :
+    if depth == N/2 :
+        # 팀이 모두 확정나면
         synergy1,synergy2 = 0,0
         for i in range(N) :
             for j in range(N) :
@@ -18,9 +17,10 @@ def dfs(last,depth) :
                     synergy1 += tab[i][j]
                 elif not member[i] and not member[j] :
                     synergy2 += tab[i][j]
-        dab = abs(synergy1-synergy2)
-        if ans == None or dab < ans :
-            ans = dab
+        gap = abs(synergy1-synergy2)
+        if gap < ans :
+            ans = gap
+            # 만약 ans보다 작다면 답 갱신
         return
     for i in range(last,N) :
         if not member[i] :

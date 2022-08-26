@@ -13,6 +13,7 @@ for _ in range(r) :
     dp[a][b] = l
     dp[b][a] = l
 for x in range(1,n+1) :
+    # x를 경유하는 경로
     for i in range(1,n+1) :
         for j in range(1,n+1) :
             if i != j :

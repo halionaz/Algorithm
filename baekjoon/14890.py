@@ -6,6 +6,7 @@ input = sys.stdin.readline
 N,L = map(int,input().split());
 world = []
 ans = N+N
+# 가로줄 검사
 for i in range(N) :
     world.append(list(map(int,input().split())))
     prev = world[i][0]
@@ -50,8 +51,7 @@ for i in range(N) :
         prev = world[i][j]
     if not canPass :
         ans -= 1
-    # else :
-    #     print("\ni 통과 {};\n".format(i+1))
+# 세로줄 검사
 for j in range(N) :
     prev = world[0][j]
     lCount = 1
@@ -95,6 +95,4 @@ for j in range(N) :
         prev = world[i][j]
     if not canPass :
         ans -= 1
-    # else :
-    #     print("\nj 통과 {};\n".format(j+1))
 print(ans)

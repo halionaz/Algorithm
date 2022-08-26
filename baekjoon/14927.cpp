@@ -1,5 +1,7 @@
 // 전구 끄기
-// 비트마스킹 & 그리디 알고리즘
+// 비트마스킹 & 그리디 알고리즘 & 브루트포스 알고리즘
+
+// 14939와 동일한 문제
 
 #include <iostream>
 #include <bitset>
@@ -43,6 +45,7 @@ int main()
 
     for (int firstRow = 0; firstRow < (1 << N); firstRow++)
     {
+        // 첫번째 줄을 껐다 키는 경우의 수를 기준으로 탐색
 
         int cnt = 0;
 
@@ -56,6 +59,7 @@ int main()
 
         for(int i = 0; i < N; i++){
             if(firstRow & (1<<i)){
+                // 첫번째 줄에서 스위치를 누른 횟수
                 cnt++;
                 toggle(0,i);
             }
