@@ -2,15 +2,22 @@
 // 사칙연산
 
 #include <iostream>
-using std::cin;
-using std::cout;
+
 int main(){
+
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+
     int T;
     int a,b;
-    cin.tie(NULL);
-    cin >> T;
-    for(int i = 0; i<T; i++){
-        cin >> a >> b;
-        cout << a+b << '\n';
+
+    std::cin >> T;
+
+    while(T--){
+        std::cin >> a >> b;
+        std::cout << a + b << '\n';
     }
+
+    return 0;
+    
 }

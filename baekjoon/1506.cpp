@@ -1,6 +1,8 @@
 // 경찰서
 // 강한 연결 요소
 
+// 코사라주 알고리즘
+
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -31,6 +33,7 @@ void rev_dfs(int cur){
     visited[cur] = true;
     // scc[cur] = ind;
     if(cost[cur] < leastCost[ind]){
+        // 이 SCC 내부에서 가장 적은 비용을 가진 도시라면, 답 갱신
         leastCost[ind] = cost[cur];
         // std::cout << cost[cur] << '\n';
     }

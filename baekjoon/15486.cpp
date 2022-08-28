@@ -5,7 +5,7 @@
 #include <algorithm>
 
 int N;
-int dp[1500002];
+int dp[1500002]; // dp[i] :: i일까지 상담원으로 있을 때, 낼 수 있는 최대 이익
 int T[1500002];
 int P[1500002];
 

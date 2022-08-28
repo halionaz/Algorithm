@@ -61,7 +61,7 @@ int main(){
     ll ans = 0;
 
     for(int i = 0; i < N; i++){
-        int ind = arr[i][1];
+        int ind = arr[i][1]; // sort 이후 이 자리에 위치해야할 요소의 원 index
         ans += returnSum(1,0,N-1,ind+1,N-1);
         updateTree(1,0,N-1,ind);
     }
