@@ -9,7 +9,8 @@ for i in range(K) :
     N -= 1;
 print(int(ans))
 
-# #재귀함수
+# 재귀함수
+
 # def fact(N) :
 #     if N == 1 or N == 0 :
 #         return 1

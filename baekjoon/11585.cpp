@@ -1,7 +1,7 @@
 // 속타는 저녁 메뉴 
 // kmp
 
-// 환형 KMP
+// 환형 kmp
 
 #include <iostream>
 #include <vector>

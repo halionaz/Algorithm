@@ -1,7 +1,7 @@
 // 순환 순열
 // kmp
 
-// 순환 KMP
+// 환형 kmp
 
 #include <iostream>
 #include <string>

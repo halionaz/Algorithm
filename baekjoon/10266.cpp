@@ -1,7 +1,7 @@
 // 시계 사진들
 // kmp
 
-// 환형 KMP
+// 환형 kmp
 
 #include <iostream>
 #include <vector>
