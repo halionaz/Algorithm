@@ -1,4 +1,4 @@
-# N과 M (3)
+# N과 M (4)
 # 백트래킹
 
 # py_output_at_once
@@ -11,7 +11,8 @@ def card(depth) :
         print(*arr)
         return
     for i in range(N) :
-        arr[depth] = i+1
-        card(depth+1)
+        if depth == 0 or i >= arr[depth-1]-1 :
+            arr[depth] = i+1
+            card(depth+1)
 
 card(0)

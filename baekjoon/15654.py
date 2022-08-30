@@ -1,6 +1,8 @@
 # N과 M (5)
 # 백트래킹
 
+# py_output_at_once
+
 import sys
 input = sys.stdin.readline
 N,M = map(int,input().split())
