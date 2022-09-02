@@ -16,12 +16,12 @@ int main(){
 
     for(int i = 0; i < N; i++){
         int x, y;
-        std:: cin >> x >> y;
-        std::vector<int> vec;
-        vec.push_back(x);
-        vec.push_back(y);
+        std::vector<int> vec(2);
+        std:: cin >> vec[0] >> vec[1];
         arr.push_back(vec);
     }
+
+    // 이미 arr은 정렬된 상태로 주어짐
 
     int start = arr[0][0];
     int end = arr[0][1];

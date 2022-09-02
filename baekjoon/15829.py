@@ -2,7 +2,7 @@
 # 해싱
 
 L = int(input())
-#Hash Function
+# Hash Function
 S = input()
 sum = 0
 for i in range(L) :
