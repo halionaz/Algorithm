@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-int dp[10001][4];
+int dp[10001][4]; // dp[i][j] :: i를 만들기 위한 방법 중 + j로 끝나는 경우의 수 
 int T, n;
 
 int main(){

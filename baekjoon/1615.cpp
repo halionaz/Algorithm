@@ -1,5 +1,7 @@
 // 교차개수세기
-// 세그먼트 트리 & 정렬
+// 세그먼트 트리
+
+// inversion counting
 
 #include <iostream>
 #include <cmath>

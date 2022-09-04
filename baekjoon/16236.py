@@ -41,7 +41,7 @@ while fishNum :
                 if 0 < copySpace[newX][newY] < sharkSize :
                     doneList.append([newX,newY])
                     copySpace[newX][newY] = sharkSize + 10
-                    if not doneDist :
+                    if doneDist == 0 :
                         doneDist = d+1
                 elif copySpace[newX][newY] > sharkSize :
                     continue
