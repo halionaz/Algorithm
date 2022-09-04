@@ -1,7 +1,8 @@
 # 우주신과의 교감
 # 최소 스패닝 트리
 
-#크루스칼 알고리즘
+# 크루스칼 알고리즘
+
 import sys
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline

@@ -1,7 +1,7 @@
 // Strongly Connected Component
 // 강한 연결 요소
 
-// SCC :: 코사라주 알고리즘를 사용하여 푸는 문제
+// 코사라주 알고리즘
 
 #include <algorithm>
 #include <cstring>

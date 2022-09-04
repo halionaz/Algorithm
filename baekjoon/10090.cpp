@@ -2,6 +2,7 @@
 // 세그먼트 트리
 
 // inversion counting
+
 // 7578, 1615와 유사한 풀이
 
 #include <iostream>
