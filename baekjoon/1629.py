@@ -3,21 +3,6 @@
 
 A,B,C = map(int,input().split())
 
-# #for문으로 구현
-# ans = 1
-# for _ in range(B) :
-#     ans *= A
-#     ans %= C
-# print(ans)
-
-# #재귀함수로 구현
-# def multiple(b) :
-#     if b == 0 :
-#         return 1
-#     else :
-#         return (multiple(b-1)*A)%C
-# print(multiple(B))
-
 #분할 정복으로 구현
 def multiple(n) :
     if n == 1:

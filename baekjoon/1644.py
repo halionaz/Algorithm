@@ -2,6 +2,7 @@
 # 소수 판정 & 에라토스테네스의 체 & 두 포인터
 
 def prime_list(n):
+    # n 미만의 소수 리스트를 출력하는 함수
     numlist = [True]*(n)
     m = int(n ** 0.5)
     for i in range(2, m + 1):
@@ -9,6 +10,7 @@ def prime_list(n):
             for j in range(i+i, n, i): 
                 numlist[j] = False
     return [i for i in range(2, n) if numlist[i] == True]
+
 N = int(input())
 arr = prime_list(N+1)
 leng = len(arr)
@@ -21,6 +23,8 @@ elif leng == 1 :
     else :
         print(0)
 else :
+    # 포인터 두개를 이용해 arr[i]~arr[j]까지의 합을 구하고,
+    # 크기 비교를 통해 제어함
     i,j = 0,1
     tmp = arr[i]+arr[j]
     ans = 0
