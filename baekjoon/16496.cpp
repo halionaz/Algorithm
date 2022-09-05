@@ -17,11 +17,7 @@ bool compare(std::string A, std::string B){
         return false;
     }
 
-    if(A + B > B + A){
-        return true;
-    } else {
-        return false;
-    }
+    return A + B > B + A;
 }
 
 int main(){
