@@ -34,6 +34,7 @@ int main(){
         std::cin >> x;
         int ind = std::upper_bound(arr.begin(),arr.end(),x) - arr.begin();
         while(submit[ind]){
+            // 만약 이미 냈다면, 그것보다 큰 그 다음 수를 선택
             ind++;
         }
         submit[ind] = 1;
