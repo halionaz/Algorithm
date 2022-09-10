@@ -1,6 +1,5 @@
 // 그대로 출력하기
 // 구현
-
 // inf_input
 
 #include <cstdio>

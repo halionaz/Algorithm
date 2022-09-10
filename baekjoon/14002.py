@@ -1,6 +1,5 @@
 # 가장 긴 증가하는 부분 수열 4
 # 다이나믹 프로그래밍
-
 # py_output_at_once
 
 N = int(input())

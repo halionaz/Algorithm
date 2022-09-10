@@ -1,6 +1,5 @@
 // Shares
 // 사칙연산
-
 // inf_input
 
 #include <iostream>

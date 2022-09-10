@@ -1,6 +1,5 @@
 // 순환 순열
 // kmp
-
 // 환형 kmp
 
 #include <iostream>

@@ -1,6 +1,5 @@
 # 가장 긴 증가하는 부분 수열 5
 # 이분 탐색 & 가장 긴 증가하는 부분 수열: o(n log n)
-
 # py_output_at_once
 
 from bisect import bisect_left

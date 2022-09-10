@@ -1,6 +1,5 @@
 # N과 M (3)
 # 백트래킹
-
 # py_output_at_once
 
 N, M = map(int,input().split())

@@ -1,6 +1,5 @@
 // 시계 사진들
 // kmp
-
 // 환형 kmp
 
 #include <iostream>

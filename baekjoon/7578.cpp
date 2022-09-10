@@ -1,6 +1,5 @@
 // 공장
 // 세그먼트 트리
-
 // inversion counting
 
 // 사실 이게 세그먼트 트리를 이용한 inversion counting 알고리즘의 첫 문제가 되었어야 했는데
