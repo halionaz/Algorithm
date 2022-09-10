@@ -28,9 +28,12 @@ std::vector<int> findPi(std::string p){
 }
 
 int main(){
+
     std::string S,P;
+
     getline(std::cin,S);
     getline(std::cin,P);
+    
     std::vector<int> pi = findPi(P);
     int N = S.size(), M = P.size(), matched = 0;
     int isPartial = 0;
@@ -46,6 +49,7 @@ int main(){
             }
         }
     }
+    
     std::cout << isPartial << '\n';
     return 0;
 }

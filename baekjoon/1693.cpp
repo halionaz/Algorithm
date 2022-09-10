@@ -1,5 +1,6 @@
 // 트리 색칠하기
 // 다이나믹 프로그래밍 & 트리에서의 다이나믹 프로그래밍
+// top-down
 
 #include <iostream>
 #include <vector>
@@ -10,8 +11,8 @@ const int inf = 999999999;
 int N;
 std::vector<int> line[100001];
 int dp[100001][19];
-// dp[i][j] :: i 노드가 j 색일 때 i노드가 부모인 서브트리를 만드는 최소 비용
 // n개의 노드를 칠하는데 log_2^n 종류 색 필요
+// dp[i][j] :: i 노드가 j 색일 때 i노드가 부모인 서브트리를 만드는 최소 비용
 
 int query(int node, int prevNode, int color){
     if(dp[node][color]){

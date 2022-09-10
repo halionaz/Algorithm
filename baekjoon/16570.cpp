@@ -20,6 +20,7 @@ std::vector<int> getPi(){
             matched++;
             pi[begin+matched-1] = matched;
             if(matched > max){
+                // max값 갱신
                 ans = 1;
                 max = matched;
             } else if (matched == max){
@@ -46,7 +47,10 @@ int main(){
         std::cin >> a;
         A.push_back(a);
     }
+
+    // 앞쪽부터 자를 수 있기에, 뒤를 기준으로 한 pi값을 구함
     std::reverse(A.begin(),A.end());
+
     std::vector<int> pi = getPi();
     if(max == -1){
         std::cout << -1 << '\n';

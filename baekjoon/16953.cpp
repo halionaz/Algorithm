@@ -51,32 +51,29 @@ int main(){
     std::cin>>A>>B;
 
     long answer=1;
+
     while(B>=A){
 
         if(B==A) {
 
-            std::cout<<answer;
+            std::cout << answer << '\n';
             return 0;
         }
 
         answer++;
 
         if(B%2==0){
-
             B/=2;
-
-        }else if(B%10==1){
-
+        }else if(B % 10 == 1){
             B-=1;
             B/=10;
-
         }else{
             break;
         }
     }
 
     // 불가능
-    std::cout<<-1<<"\n";
+    std::cout << -1 << "\n";
     
     return 0;
 }
