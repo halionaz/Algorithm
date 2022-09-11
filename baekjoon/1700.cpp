@@ -21,17 +21,17 @@ int main(){
 
     for(int i = 0; i < K; i++){
 
-        bool already = false;
+        bool pass = false;
 
         for(int j = 0; j < N; j++){
             if(plug[j] == schedule[i]){
                 // 이미 꽂혀 있다면
-                already = true;
+                pass = true;
                 break;
             }
         }
 
-        if(already){
+        if(pass){
             continue;
         }
 
@@ -39,12 +39,12 @@ int main(){
             if(plug[j] == 0){
                 // 비어있는 구멍을 찾았다면
                 plug[j] = schedule[i];
-                already = true;
+                pass = true;
                 break;
             }
         }
 
-        if(already){
+        if(pass){
             continue;
         }
 
@@ -67,6 +67,7 @@ int main(){
             }
 
             if(l > lastUseNum){
+                // 더 마지막에 쓰인 애로 갱신
                 lastUseNum = l;
                 lastUseInd = j;
             }

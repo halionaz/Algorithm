@@ -1,6 +1,8 @@
 // 수열과 쿼리 21
 // 세그먼트 트리
 
+// 세그먼트 트리에 그 구간에 더해진 값들을 저장함
+
 #include<iostream>
 #include<algorithm>
 #include<vector>
@@ -9,52 +11,54 @@ typedef long long ll;
 
 const int MAX = 100000;
 
-ll a[MAX + 1];
+ll arr[MAX + 1];
 ll tree[MAX * 4];
 
-void init(int start, int end, int node)
+void init(int node, int s, int e)
 {
-	if (start == end)
+	if (s == e)
 	{
-		tree[node] = a[start];
+		tree[node] = arr[s];
 		return;
 	}
 	tree[node] = 0;
-	int mid = (start + end) / 2;
-	init(start, mid, node * 2);
-	init(mid + 1, end, node * 2 + 1);
+	int mid = (s + e) / 2;
+	init(node * 2,s, mid);
+	init(node * 2 + 1, mid + 1, e);
 }
 
-void updateTree(int start, int end, int node, int left, int right, ll k)
+void updateTree(int node, int s, int e, int l, int r, ll k)
 {	
-	if (start > right || end < left){
+	if (s > r || e < l){
         return; 
     } 
-	if (left <= start && end <= right)
+	if (l <= s && e <= r)
 	{
 		tree[node] += k;
 		return;
 	}
-	int mid = (start + end) / 2;
-	updateTree(start, mid, node * 2, left, right, k);
-	updateTree(mid + 1, end, node * 2 + 1, left, right, k);
+	int mid = (s + e) / 2;
+	updateTree(node*2, s, mid, l, r, k);
+	updateTree(node*2 + 1, mid + 1, e, l, r, k);
 }
 
-ll search(int start, int end, int node, int index, ll ans)
+ll search(int node, int s, int e, int index, ll ans)
 {	
-	if (index < start || index > end){
+	if (index < s || index > e){
         return 0;
+    } else {
+
+        ans += tree[node];
+
+        if (s == e){
+            // 목표 인덱스에 도달했으므로 return
+            return ans;
+        } else {
+            int mid = (s + e) / 2;
+            return search(node * 2, s, mid, index, ans) + search(node * 2 + 1, mid + 1, e, index, ans);
+        }
+
     }
-
-	ans += tree[node];
-
-	if (start == end){
-
-        return ans;
-
-    } 
-	int mid = (start + end) / 2;
-	return search(start, mid, node * 2, index, ans) + search(mid + 1, end, node * 2 + 1, index, ans);
 }
 
 int main(void)
@@ -66,27 +70,27 @@ int main(void)
 	std::cin >> n;
 
 	for (int i = 1; i <= n; i++){
-		std::cin >> a[i];
+		std::cin >> arr[i];
     }
 
-	init(1, n, 1);
+	init(1, 1, n);
 
 	std::cin >> m;
 
 	while (m--)
 	{
-		int q, left, right, index;
+		int q, l, r, index;
 		ll k;
 
 		std::cin >> q;
 
 		if (q == 1)
 		{
-			std::cin >> left >> right >> k;
-			updateTree(1, n, 1, left, right, k);
+			std::cin >> l >> r >> k;
+			updateTree(1, 1, n, l, r, k);
 		} else {
 			std::cin >> index;
-			std::cout << search(1, n, 1, index, 0) <<'\n';
+			std::cout << search(1, 1, n, index, 0) <<'\n';
 		}
 	}
 

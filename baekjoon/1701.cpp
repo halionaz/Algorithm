@@ -17,6 +17,7 @@ void getPi(std::string P){
         if(P[begin+matched] == P[matched]){
             matched++;
             if(matched > ans){
+                // 답 갱신
                 ans = matched;
                 ansS = P;
             }
@@ -35,8 +36,10 @@ void getPi(std::string P){
 int main(){
 
     std::cin >> S;
+
     int M = S.length();
     for(int i = 0; i < M-1; i++){
+        // S의 i번째 문자부터 M-i길이의 문자열 추출
         std::string P = S.substr(i,M-i);
         getPi(P);
     }

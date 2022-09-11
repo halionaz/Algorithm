@@ -1,5 +1,6 @@
 // 외판원 순회 3
 // 외판원 순회 문제 & 다이나믹 프로그래밍 & 비트마스킹 & 비트필드를 이용한 다이나믹 프로그래밍
+// top-down
 
 // [2098, 외판원 순회] 문제에서 자료형만 double로 변하고,
 // 각 노드간 거리를 직접 구해야하는 문제
@@ -19,12 +20,13 @@ int N;
 std::pair<int, int> position[16];
 
 double dfs(int last, int visited){
+
     double &ret = dp[last][visited];
 
     if(visited == (1 << N) - 1){
         // 모든 노드 순회 완료
         if(line[last][0] == 0){
-            // 길이 없으므로 불가능
+            // 시작점으로 돌아가는 길이 없으므로 불가능
             return inf;
         } else {
             // 다시 시작점으로 돌아가는 길이 있다면 계산 시작
@@ -40,7 +42,7 @@ double dfs(int last, int visited){
     ret = inf;
     for(int i = 0; i < N; i++){
         if((visited&(1<<i)) == 0 && line[last][i] != 0){
-            // 미방문 노드인 경우 들러봄
+            // 미방문 노드이고, 길이 존재할 경우 들러봄
             ret = std::min(ret, dfs(i, visited|(1<<i))+line[last][i]);
         }
     }
@@ -59,12 +61,14 @@ int main(){
         std::cin >> position[i].first >> position[i].second;
     }
 
+    // 거리 계산
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
             line[i][j] = sqrt(pow(position[i].first-position[j].first,2)+pow(position[i].second-position[j].second,2));
         }
     }
 
+    // DP 값 초기화
     for(int i = 0; i < 16; i++){
         for(int j = 0; j < (1<<16); j++){
             dp[i][j] = -1;

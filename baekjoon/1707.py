@@ -1,9 +1,10 @@
 # 이분 그래프
-# 너비 우선 탐색
+# 너비 우선 탐색 & 이분 그래프
 
 from collections import deque
 import sys
 input = sys.stdin.readline
+
 def bfs(start) :
     graph[start] = 1
     queue = deque([start])
@@ -17,7 +18,9 @@ def bfs(start) :
                 if graph[i] == graph[j] :
                     return False
     return True
+
 K = int(input())
+
 for _ in range(K) :
     V,E = map(int,input().split())
     line = [[] for _ in range(V+1)]
