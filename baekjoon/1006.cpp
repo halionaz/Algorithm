@@ -1,5 +1,6 @@
 // 습격자 초라기
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 #include <cstring>

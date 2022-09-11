@@ -1,5 +1,6 @@
 # 피보나치 함수
 # 다이나믹 프로그래밍
+# bottom-up
 
 T = int(input())
 for _ in range(T) :
