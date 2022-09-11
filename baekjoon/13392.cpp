@@ -1,5 +1,6 @@
 // 방법을 출력하지 않는 숫자 맞추기
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <stdio.h>
 #include <cstring>

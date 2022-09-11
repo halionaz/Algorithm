@@ -1,5 +1,6 @@
 // 사전
 // 다이나믹 프로그래밍 & 조합론
+// top-down
 
 #include <iostream>
 #include <string.h>

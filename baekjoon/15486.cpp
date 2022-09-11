@@ -1,5 +1,6 @@
 // 퇴사 2
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 #include <algorithm>

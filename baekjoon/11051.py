@@ -1,5 +1,6 @@
 # 이항 계수 2
 # 조합론 & 다이나믹 프로그래밍
+# bottom-up
 
 N,K = map(int,input().split())
 pt = []

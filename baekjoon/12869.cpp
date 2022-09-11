@@ -1,5 +1,6 @@
 // 뮤탈리스크
 // 다이나믹 프로그래밍
+// top-down
 
 #include <iostream>
 #include <algorithm>

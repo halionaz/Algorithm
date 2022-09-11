@@ -1,5 +1,6 @@
 // 발전소
 // 다이나믹 프로그래밍 & 비트마스킹 & 비트필드를 이용한 다이나믹 프로그래밍
+// top-down
 
 #include <iostream>
 #include <algorithm>

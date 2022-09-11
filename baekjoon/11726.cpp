@@ -1,5 +1,6 @@
 // 2xn 타일링
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 #define mod 10007

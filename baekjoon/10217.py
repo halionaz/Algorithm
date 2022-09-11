@@ -13,7 +13,7 @@ for _ in range(T) :
         ticket[u].append((v,c,d))
     dp = [[INF]*(M+1) for _ in range(N+1)]
     #dp[i][j]=k 이면, i까지 가는 데, j이하의 돈을 쓴다면 k시간이 걸린다는 것
-    dp[1][0]=0
+    dp[1][0] = 0
     for i in range(M+1) :
         for here in range(1,N+1) :
             if dp[here][i] == INF :

@@ -1,5 +1,6 @@
 # 1로 만들기
 # 다이나믹 프로그래밍
+# bottom-up
 
 N = int(input())
 memo = [0]*(N+1)

@@ -1,5 +1,6 @@
 // 게임 
 // 다이나믹 프로그래밍 & 깊이 우선 탐색
+// top-down
 
 #include <iostream>
 #include <cstring>

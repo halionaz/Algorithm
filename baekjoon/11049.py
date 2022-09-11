@@ -1,5 +1,8 @@
 # 행렬 곱셈 순서
 # 다이나믹 프로그래밍
+# bottom-up
+
+# 탑다운 형식으로도 풀 수 있으나, 바텀업으로 풂
 
 import sys
 input = sys.stdin.readline

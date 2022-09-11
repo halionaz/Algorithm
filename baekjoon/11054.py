@@ -1,5 +1,6 @@
 # 가장 긴 바이토닉 부분 수열
 # 다이나믹 프로그래밍
+# bottom-up
 
 N = int(input())
 A = list(map(int, input().split()))

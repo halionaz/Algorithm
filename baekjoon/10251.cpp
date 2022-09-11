@@ -1,5 +1,6 @@
 // 운전 면허 시험
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 #include <cstring>

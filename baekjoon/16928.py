@@ -1,5 +1,6 @@
 # 뱀과 사다리 게임
 # 그래프 탐색 & 다이나믹 프로그래밍 & 깊이 우선 탐색
+# bottom-up
 
 import sys
 import math

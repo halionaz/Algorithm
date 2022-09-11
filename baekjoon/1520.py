@@ -1,5 +1,6 @@
 # 내리막 길
 # 깊이 우선 탐색 & 다이나믹 프로그래밍
+# top-down
 
 import sys
 sys.setrecursionlimit(10000)
