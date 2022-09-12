@@ -1,7 +1,8 @@
 // 볼록 껍질
 // 기하학 & 볼록 껍질
+// ccw 알고리즘 & 그라함 스캔 알고리즘
 
-// 컨벡스 헐 - 그라함 스캔 알고리즘을 사용하는 기초 문제
+// 컨벡스 헐 - 그라함 스캔을 사용하는 기초 문제
 
 #include <iostream>
 #include <vector>
@@ -15,6 +16,11 @@ std::vector<std::vector<ll> > arr;
 std::vector<std::vector<ll> > stack;
 
 ll ccw(std::vector<ll> n1, std::vector<ll> n2, std::vector<ll> n3){
+    // n1 -> n2 -> n3의 방향성 판별
+    // 양수 : 반시계 방향
+    // 0 : 직선
+    // 음수 : 시계 방향
+    // (n2[0]-n1[0])*(n3[1]-n1[1]) - (n3[0]-n1[0])*(n2[1]-n1[1])
     return n1[0]*n2[1] + n2[0]*n3[1] + n3[0]*n1[1] - (n2[0]*n1[1] + n3[0]*n2[1] + n1[0]*n3[1]);
 }
 
@@ -31,8 +37,8 @@ bool cmp2(std::vector<ll> n1, std::vector<ll> n2){
     if(cp){
         return cp > 0;
     } else {
-        // ccw가 0일 경우 좌표가 작은 순으로 나열
-        return abs(n1[0] + n1[1]) < abs(n2[0] + n2[1]);
+        // ccw가 0일 경우 (직선일 경우) 좌표가 작은 순으로 나열
+        return std::abs(n1[0] + n1[1]) < std::abs(n2[0] + n2[1]);
     }
 }
 
@@ -52,9 +58,12 @@ int main(){
         arr.push_back(vec);
     }
 
+    // 일단 y좌표와 x좌표가 작은 순으로 정렬해 기준 좌표를 만듦
     std::sort(arr.begin(),arr.end(), cmp1);
+    // 기준 좌표를 제외한 나머지는 반시계 방향으로 정렬
     std::sort(arr.begin()+1, arr.end(), cmp2);
 
+    // 스택에 두개의 점 넣고 시작
     stack.push_back(arr[0]);
     stack.push_back(arr[1]);
 
