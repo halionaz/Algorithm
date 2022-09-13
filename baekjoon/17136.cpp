@@ -35,6 +35,7 @@ void dfs(int y, int x, int cnt) {
 		dfs(y, x + 1, cnt);
 	}
 
+    // 현재 칸 1
 	// 크기 별로 재귀 돌려줌, 큰거부터 해야 최솟값 갱신 가능
 	for (int size = 5; size >= 1; size--) {
 

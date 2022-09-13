@@ -1,5 +1,6 @@
 // 커플 만들기
 // 정렬 & 다이나믹 프로그래밍 & 그리디 알고리즘
+// bottom-up
 
 #include <cstdlib>
 #include <iostream>

@@ -63,7 +63,7 @@ int main(){
     }
 
     std::sort(arr,arr+N, compare);
-    // y좌표 내림차순으로, x좌표 오름차순으로 정렬
+    // y좌표 내림차순으로 정렬하되, 같다면 x좌표 오름차순으로 정렬
 
     int prevY = arr[0].second;
     std::vector<int> cash;
@@ -80,6 +80,8 @@ int main(){
             prevY = arr[i].second;
         }
         if(0 < arr[i].first && arr[i].first < max*2){
+            // 현 점보다 y좌표가 크면서 왼쪽에 있는 점들 * 현 점보다 y좌표가 크면서 오른쪽에 있는 점들
+            // = 현 점을 중심으로 하는 V형 별자리의 개수
             ans += (searchTree(1,0,max*2,0,arr[i].first-1)*searchTree(1,0,max*2,arr[i].first+1,max*2));
             ans %= mod;
         }
