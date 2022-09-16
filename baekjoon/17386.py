@@ -1,5 +1,6 @@
 # 선분 교차 1
 # 기하학 & 선분 교차 판정
+# ccw 알고리즘
 
 a=[0,0]
 b=[0,0]
@@ -20,12 +21,14 @@ abd = ccw(a,b,d)
 cda = ccw(c,d,a)
 cdb = ccw(c,d,b)
 if abc*abd == 0 and cda*cdb == 0 :
+    # 두 선분이 한 직선 위에 있을때
     ax,bx,cx,dx = a[0],b[0],c[0],d[0]
     if bx<ax :
         ax,bx = bx,ax
     if dx<cx :
         cx,dx = dx,cx
     if ax<=dx and cx<dx :
+        # 두 선분이 겹쳐짐
         print(1)
     else :
         print(0)
