@@ -1,5 +1,5 @@
 // 트리와 쿼리 2
-// 최소 공통 조상
+// 최소 공통 조상 & 희소 배열
 
 #include <iostream>
 #include <vector>
