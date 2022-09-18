@@ -1,5 +1,5 @@
 // 터보소트
-// 세그먼트 트리
+// 세그먼트 트리 & 두 포인터
 
 #include <iostream>
 #include <vector>
