@@ -1,5 +1,5 @@
 // 정점들의 거리
-// 최소 공통 조상
+// 최소 공통 조상 & 희소 배열
 
 #include <iostream>
 #include <cstring>
@@ -10,8 +10,11 @@ const int maxNode = 40001;
 
 int N, M;
 std::vector<std::vector<int> > line[maxNode];
-int parents[log+1][maxNode];
-int dist[log+1][maxNode];
+
+// sparse table
+int parents[log+1][maxNode]; // 노드의 로그 부모의 노드 번호 저장
+int dist[log+1][maxNode]; // 노드의 로그 부모까지의 거리 저장
+
 int depth[maxNode];
 
 void makeTree(int tmp){
@@ -52,11 +55,15 @@ int main(){
     }
 
     depth[1] = 0;
+
+    // 1번 노드를 root로 하는 트리 만들기
     makeTree(1);
 
+    // sparse table 만들기
     for(int i = 0; i < log; i++){
         for(int j = 1; j <= N; j++){
             if(parents[i][j] != -1){
+                // root가 아니라면
                 parents[i+1][j] = parents[i][parents[i][j]];
                 dist[i+1][j] = dist[i][parents[i][j]] + dist[i][j];
             }
@@ -66,16 +73,20 @@ int main(){
     std::cin >> M;
 
     while(M--){
+        
         int a,b;
         std::cin >> a >> b;
+        // a와 b까지의 거리를 구해야 함
+
         int ans = 0;
         if(depth[a] < depth[b]){
             int tmp = a;
             a = b;
             b = tmp;
         }
-        int d = depth[a] - depth[b];
+        int d = depth[a] - depth[b]; // 깊이 차이
         int ind = 0;
+
         while(d){
             if(d%2){
                 ans += dist[ind][a];
@@ -84,6 +95,7 @@ int main(){
             d/=2;
             ind++;
         }
+
         if(a!=b){
             for(int i = log; i >= 0; i--){
                 if(parents[i][a] != parents[i][b]){

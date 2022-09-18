@@ -6,15 +6,23 @@
 #include <algorithm>
 
 int main(){
+
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+
     int N,M;
+
     std::cin>>N>>M;
     std::vector<std::string> noneHeard;
     std::vector<std::string> ans;
     noneHeard.resize(N);
+
     for(int i = 0; i < N; i++){
         std::cin >> noneHeard[i];
     }
+
     std::sort(noneHeard.begin(),noneHeard.end());
+    
     std::string inp;
     for(int i = 0; i < M; i++){
         std::cin >> inp;
@@ -22,10 +30,13 @@ int main(){
             ans.push_back(inp);
         }
     }
+
     std::sort(ans.begin(),ans.end());
+
     std::cout<<ans.size()<<'\n';
     for(int i = 0; i < ans.size(); i++){
         std::cout<<ans[i]<<'\n';
     }
+
     return 0;
 }

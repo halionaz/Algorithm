@@ -29,7 +29,9 @@ vector<int> getPartialMatch(const string &N){
     }
     return pi;
 }
+
 vector<int> kmpSearch2(const string &H, const string &N){
+    // H에서 P 찾기
     int n = H.size(), m = N.size();
     vector<int> result;
     vector<int> pi = getPartialMatch(N);
@@ -47,14 +49,21 @@ vector<int> kmpSearch2(const string &H, const string &N){
     }
     return result;
 }
+
 int main(void){
+
     ios_base::sync_with_stdio(0);
     cin.tie(0);
+
     getline(cin, T);
     getline(cin, P);
+
     vector<int> result = kmpSearch2(T, P);
+
     cout << result.size() << "\n";
-    for (int i = 0; i < result.size(); i++)
+    for (int i = 0; i < result.size(); i++){
         cout << result[i] << "\n";
+    }
+    
     return 0;
 }
