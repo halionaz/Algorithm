@@ -5,14 +5,19 @@
 #include <limits.h>
 
 int main(void){
+
     int N,M,B;
+
     scanf("%d %d %d",&N,&M,&B);
+
     int world[N][M];
+
     for(int i = 0; i < N; i++){
         for(int j = 0; j < M; j++){
             scanf("%d",&world[i][j]);
         }
     }
+
     int ansH = 0;
     int ansT = INT_MAX;
     for(int i = 0; i < 257; i++){
@@ -34,6 +39,8 @@ int main(void){
             ansH = i;
         }
     }
+    
     printf("%d %d\n",ansT,ansH);
+
     return 0;
 }

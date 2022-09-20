@@ -1,5 +1,5 @@
 # solved.ac
-# 구현
+# 구현 & 사칙연산
 
 import sys
 input = sys.stdin.readline

@@ -3,6 +3,12 @@
 
 // 15783 세진 바이러스와 정확히 똑같은 문제
 
+// 일반 SCC와 다르게 역방향 경로를 저장하지 않고
+// 처음에 DFS와 stack을 이용해 들어오는 개수가 0인 것이 가장 먼저 탐색될 수 있도록 함
+// 그 이후 한번 더 DFS를 실시해
+// input degree가 0인 애들에 물을 붓는게
+// 얼마나 많은 node를 해결할 수 있는지 보면서 개수를 센다
+
 #include <iostream>
 #include <stack>
 #include <vector>
