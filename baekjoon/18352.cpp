@@ -16,12 +16,13 @@ std::vector<int> line[300001];
 std::queue<int> que;
 
 int main(){
+
     std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
 
     memset(dist, -1, sizeof(dist));
 
-    std::cin>>N>>M>>K>>X;
+    std::cin >> N >> M >> K >> X;
 
     for(int i = 0; i < M; i++){
         int A, B;
@@ -40,6 +41,7 @@ int main(){
         if(dist[cur] == K){
             answer.push_back(cur);
         } else if(dist[cur] == K+1){
+            // 거리가 넘어갔으므로, 이 노드에서 더 탐색해봤자 의미가 없음
             break;
         }
         for(int i = 0; i < line[cur].size(); i++){

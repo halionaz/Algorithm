@@ -26,7 +26,10 @@ int main(){
     }
 
     for(int i = 0; i < N; i++){
+        // 최대한 세 공장에서 공구하는게 좋음
         if(arr[i+1] > arr[i+2]){
+            // 현재 3번째 공장의 수요가 적으므로
+            // 세 공장 공구를 최대로 하기 위해 앞 두 공장에서 차이만큼 공구하고 감
             eff = std::min(arr[i], arr[i+1] - arr[i+2]);
             ans += (B+C)*eff;
             arr[i] -= eff;
@@ -47,6 +50,7 @@ int main(){
             arr[i] -= eff;
             arr[i+1] -= eff;
         }
+        // 공구를 했음에도 수요가 남은 현재 공장꺼 사기
         ans += B * arr[i];
     }
 

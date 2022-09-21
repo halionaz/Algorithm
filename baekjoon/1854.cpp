@@ -1,5 +1,5 @@
 // K번째 최단경로 찾기
-// 데이크스트라
+// 데이크스트라 & 우선순위 큐
 
 #include <functional>
 #include <iostream>
