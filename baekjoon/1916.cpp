@@ -40,7 +40,8 @@ int main(){
         int ind = que.top().second;
         que.pop();
         if(memo[ind] < dist){
-            // 이미 탐색했다면 pass
+            // 이미 다른 노드에서 이 노드로 오는 더 빠른 경우를 탐색했다면 pass
+            
             // 이미 탐색했다면 현재 ind보다 먼저 탐색된 친구이므로
             // 무조건 dist보다 memo[ind]가 작음
             continue;

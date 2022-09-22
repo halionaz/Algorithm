@@ -1,8 +1,10 @@
 # 연속합
 # 다이나믹 프로그래밍
+# bottom-up
 
 n = int(input())
 arr = list(map(int, input().split()))
+# memo[i] :: 0 ~ i 수열의 부분합 중 가장 큰 합
 memo = [0]*len(arr)
 ans = arr[0]
 for i in range(n) :
