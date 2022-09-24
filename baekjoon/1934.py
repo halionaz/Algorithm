@@ -11,4 +11,6 @@ for _ in range(T) :
         temp = a%b
         a = b
         b = temp
+    # a는 최초 a와 b의 최대공약수
+    # a와 b의 최대공배수는 a*b를 두 수의 최대공약수로 나눈 값
     print(mult//a)

@@ -1,7 +1,8 @@
 # 수 찾기
 # 이분 탐색
 
-#선형 탐색 O(n)
+# 선형 탐색 O(n)
+
 # N = int(input())
 # listArr = list(map(int,input().split()))
 # M = int(input())
@@ -16,10 +17,11 @@
 #     if not isIn :
 #         print('0')
 
-#이진 탐색 O(logN)
+# 이진 탐색 O(logN)
+
 N = int(input())
 listArr = list(map(int,input().split()))
-listArr.sort()
+listArr.sort() # 이진 탐색을 위해서는 배열을 정렬해야 함
 M = int(input())
 mapArr = list(map(int,input().split()))
 for i in mapArr :
@@ -29,6 +31,7 @@ for i in mapArr :
     isIn = True
     while listArr[center] != i :
         if start > end :
+            # 탐색을 모두 했음에도 없음
             print('0')
             isIn = False
             break

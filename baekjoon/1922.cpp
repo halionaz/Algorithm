@@ -1,5 +1,6 @@
 // 네트워크 연결
 // 최소 스패닝 트리
+// 크루스칼 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -50,6 +51,7 @@ int main(){
         line.push_back(vec);
     }
 
+    // 비용이 적은 순으로 정렬
     std::sort(line.begin(), line.end());
 
     for(int i = 0; i < line.size(); i++){

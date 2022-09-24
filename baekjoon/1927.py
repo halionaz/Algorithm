@@ -1,13 +1,19 @@
 # 최소 힙
 # 우선순위 큐
 
+# 미친 하승준
+# 힙을 직접 구현하다
+
 import sys
 input = sys.stdin.readline
 N = int(input())
-heap = [0]
+
+heap = [0] # 트리로 만들기에 인덱스를 1부터 시작시킴
+
 for _ in range(N) :
     inp = int(input())
     if inp == 0 :
+        # 가장 작은 값을 출력하고, 그 값을 배열에서 제거하는 연산
         if len(heap) == 1:
             print(0)
         else :
