@@ -41,6 +41,7 @@ int main(){
         for(int j = 0; j < party[i].size(); j++){
             if(!memo[party[i][j]]){
                 // clean한 사람이 모임에 한명이라도 있음
+                // 그 당시에는 이 파티는 청정 파티였던 것.
                 isClean = true;
                 break;
             }
@@ -57,10 +58,12 @@ int main(){
     for(int i = 1; i<= N; i++){
         memo[i] = first[i];
     }
+
     for(int i = 0; i < M; i++){
         int isInfected = false;
         for(int j = 0; j < party[i].size(); j++){
             if(memo[party[i][j]]){
+                // 한명이라도 감염 시 이 파티는 오염됨 
                 isInfected = true;
                 break;
             }

@@ -30,6 +30,6 @@ def bfs(start) :
                     maximum = dp[i]
                     maxIndex = i
     return (maxIndex,maximum)
-fE = bfs(1)
-sE = bfs(fE[0])
+fE = bfs(1) # 1번으로부터 가장 멀리 있는 노드
+sE = bfs(fE[0]) # 그 노드에서 가장 멀리 있는 노드
 print(sE[1])

@@ -4,6 +4,7 @@
 import sys
 input = sys.stdin.readline
 INF = 99999999999999999999
+
 V,E = map(int,input().split())
 dp = [[INF]*(V+1) for _ in range(V+1)]
 for i in range(1,V+1) :
@@ -12,6 +13,7 @@ for _ in range(E) :
     a,b,c = map(int,input().split())
     dp[a][b] = c
 for x in range(1,V+1) :
+    # x 경유
     for i in range(1,V+1) :
         for j in range(1,V+1) :
             if i != j :

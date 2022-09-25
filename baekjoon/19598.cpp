@@ -25,6 +25,7 @@ int main(){
         meetings.push_back(std::make_pair(s, e));
     }
 
+    // 시작 시간에 맞춰 회의 배열 정렬
     std::sort(meetings.begin(), meetings.end());
 
     // 큐에는 끝나는 시간이 저장됨
@@ -38,6 +39,8 @@ int main(){
             q.pop();
         }
         q.push(meetings[i].second);
+        // 정체된 회의 개수가 q에 저장되어 있으므로,
+        // q의 사이즈가 필요한 회의실 개수
         ans = std::max(ans, (int)q.size());
 
     }

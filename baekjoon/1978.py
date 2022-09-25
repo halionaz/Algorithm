@@ -1,5 +1,5 @@
 # 소수 찾기
-# 소수 판정 & 에라토스테네스의 체
+# 소수 판정
 
 N = int(input())
 inp = list(map(int,input().split()))
