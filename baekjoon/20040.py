@@ -1,6 +1,9 @@
 # 사이클 게임
 # 분리 집합
 
+# 이미 같은 그룹에 있는 노드 두개를 선택하면 사이클이 생김
+# 이를 판별해주는 프로그램
+
 import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
@@ -25,10 +28,11 @@ def union(a,b) :
         else :
             parent[x] = y
 isDone = False
-for i in range(m) :
+for i in range(1,m+1) :
     a,b = map(int,input().split())
-    if union(a,b) and not isDone :
-        print(i+1)
+    if union(a,b) :
+        print(i)
         isDone = True
+        break
 if not isDone :
     print(0)

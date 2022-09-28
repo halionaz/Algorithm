@@ -24,7 +24,7 @@ int main(){
     N = inp.length();
 
     for(int i = 1; i <= N; i++){
-        code[i] = inp[i-1] - '0';
+        code[i] = inp[i-1] - '0'; // 숫자로 변환
     }
 
     dp[0] = 1;

@@ -42,6 +42,7 @@
 # print(ans)
 
 # nCm은 n!을 n-m!과 m!로 나눈 것.
+
 def countNum(N, num) :
     count = 0
     div = num
@@ -50,5 +51,7 @@ def countNum(N, num) :
         div *= num
     return count
 n,m = map(int,input().split())
+
+# 2의 개수와 5의 개수 중 최솟값이 10이 곱해진 횟수
 ans = min(countNum(n,5)-countNum(n-m,5)-countNum(m, 5),countNum(n, 2)-countNum(n-m, 2)-countNum(m, 2))
 print(ans)

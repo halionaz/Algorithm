@@ -1,7 +1,12 @@
 # 트리 순회
-# 트리
+# 트리 & 재귀
 
 # 이진 트리 구현은 class로 해도 되지만 단순하게 dictionary로 구현
+
+# 22.09.28
+# 이진트리 구현을 class나 dict로 하는 미친놈이 있다?
+# 그냥 배열 쓰셈... tree[1]-tree[2] - tree[4] & tree[5]
+#                           tree[3] - tree[6] & tree[7] 식으로 tree[n]의 자식은 tree[n*2]와 tree[n*2+1]
 
 import sys
 input = sys.stdin.readline
