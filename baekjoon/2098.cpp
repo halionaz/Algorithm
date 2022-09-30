@@ -1,5 +1,6 @@
 // 외판원 순회
 // 외판원 순회 문제 & 다이나믹 프로그래밍 & 비트마스킹 & 비트필드를 이용한 다이나믹 프로그래밍
+// top-down
 
 #include <iostream>
 #include <string.h>
@@ -31,7 +32,7 @@ int dfs(int last, int visited){
     dp[last][visited] = inf;
     for(int i = 1; i < N; i++){
         if((visited&(1<<i)) == 0 && line[last][i] != 0){
-            // 미방문 노드인 경우 들러봄
+            // 미방문 노드이고, 그 노드에 방문할 수 있는 경우 들러봄
             dp[last][visited] = std::min(dp[last][visited], dfs(i, visited|(1<<i))+line[last][i]);
         }
     }

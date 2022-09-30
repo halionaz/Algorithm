@@ -5,8 +5,11 @@ import sys
 input = sys.stdin.readline
 N, C = map(int,input().split())
 house = sorted([int(input()) for _ in range(N)])
+
+# 답은 start와 end 사이 값임 
 start = 1
 end = house[-1] - house[0]
+
 while start <= end :
     mid = (start + end) // 2
     cnt = 1

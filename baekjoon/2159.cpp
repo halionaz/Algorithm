@@ -1,5 +1,6 @@
 // 케익 배달
 // 다이나믹 프로그래밍
+// top-down
 
 #include <cstdlib>
 #include <iostream>
