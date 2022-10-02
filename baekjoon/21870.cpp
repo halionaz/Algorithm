@@ -9,6 +9,7 @@ int ans = 0;
 std::vector<int> arr;
 
 int gcd(int a, int b){
+    // 최대 공약수 반환
     int tmp;
     if(a < b){
         tmp = a;
@@ -25,6 +26,7 @@ int gcd(int a, int b){
 
 int solve(int s, int e){
     if(s == e){
+        // 배열에 하나 밖에 남아있지 않다면, 그 요소 반환
         return arr[s];
     } else {
 
@@ -35,12 +37,14 @@ int solve(int s, int e){
         for(int i = s+1; i <= s+mid-1; i++){
             g = gcd(arr[i],g);
         }
+        // 왼쪽을 선택해서 최대공약수를 구한 경우
         int first = g + solve(s+mid,e);
 
         g = arr[e];
         for(int i = e-1; i >= s+mid; i--){
             g = gcd(arr[i],g);
         }
+        // 오른쪽을 선택해서 최대공약수를 구한 경우
         int second = g + solve(s,s+mid-1);
 
         return first > second ? first : second;

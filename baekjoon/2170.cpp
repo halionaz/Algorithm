@@ -33,9 +33,11 @@ int main(){
     for(int i = 1; i < N; i++){
         if(arr[i][0] <= end){
             if(arr[i][1] > end){
+                // 선 이어 그리기
                 end = arr[i][1];
             }
         } else {
+            // 선이 끝남
             ans += end-start;
             start = arr[i][0];
             end = arr[i][1];

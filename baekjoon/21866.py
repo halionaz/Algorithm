@@ -7,6 +7,7 @@ summing = 0
 hacker = False
 for i in range(9) :
     if arr[i] > score[i] :
+        # 조작된 점수
         hacker = True
         break
     else :

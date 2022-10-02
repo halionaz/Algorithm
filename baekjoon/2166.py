@@ -1,5 +1,6 @@
 # 다각형의 면적
 # 다각형의 넓이
+# ccw 알고리즘
 
 # 벡터 외적을 통해 넓이를 구할 수 있음
 
@@ -13,8 +14,8 @@ for _ in range(N) :
 def ccw(a,b,c) :
     vec1 = [pos[b][1]-pos[a][1],pos[b][0]-pos[a][0]]
     vec2 = [pos[c][1]-pos[a][1],pos[c][0]-pos[a][0]]
-    return (vec1[0]*vec2[1]-vec1[1]*vec2[0])/2;
+    return vec1[0]*vec2[1]-vec1[1]*vec2[0]
 ans = 0
 for i in range(1,N-1) :
-    ans += ccw(0,i,i+1)
+    ans += ccw(0,i,i+1)/2
 print(abs(ans))

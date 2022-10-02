@@ -21,6 +21,7 @@ abd = ccw(a,b,d)
 cda = ccw(c,d,a)
 cdb = ccw(c,d,b)
 if abc*abd == 0 and cda*cdb == 0 :
+    # 두 선분이 한 직선 위에 있을 때
     ax,bx,cx,dx = a[0],b[0],c[0],d[0]
     ay,by,cy,dy = a[1],b[1],c[1],d[1]
     if bx<ax :

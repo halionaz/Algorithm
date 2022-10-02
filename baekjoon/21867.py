@@ -1,5 +1,5 @@
 # Java Bitecode
-# 구현
+# 구현 & 문자열
 
 N = int(input())
 S = input()

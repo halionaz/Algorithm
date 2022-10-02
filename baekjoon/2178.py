@@ -1,7 +1,7 @@
 # 미로 탐색
 # 너비 우선 탐색
 
-# 최단경로 탐색이므로 DFS보다 BFS가 효율적임
+# 최단경로 탐색이므로 DFS가 아닌 BFS를 사용해야 함
 
 import sys
 input = sys.stdin.readline
@@ -10,7 +10,7 @@ maze = []
 for i in range(N) :
     maze.append(list(map(int,input().rstrip())))
 queue = [(0,0)]
-maze[0][0] = 2
+maze[0][0] = 2 # 이 칸을 방문하기 위해 필요한 칸 수 기록
 while len(queue) > 0 :
     i,j = queue.pop(0)
     plus = maze[i][j]
