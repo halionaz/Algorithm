@@ -1,5 +1,6 @@
 # CCW
 # 기하학
+# ccw 알고리즘
 
 p1 = list(map(int,input().split()))
 p2 = list(map(int,input().split()))
