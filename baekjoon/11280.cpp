@@ -1,5 +1,6 @@
 // 2-SAT - 3
 // 강한 연결 요소 & 2-sat
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -45,13 +46,13 @@ int main(){
 
     for(int i = 0; i < M; i++){
         int a,b;
-        std::cin >> a >> b;
+        std::cin >> a >> b; 
         a = a < 0 ? (-a)*2 : a*2-1;
         b = b < 0 ? (-b)*2 : b*2-1;
-        line[a%2?a+1:a-1].push_back(b);
-        reverseLine[b].push_back(a%2?a+1:a-1);
-        line[b%2?b+1:b-1].push_back(a);
-        reverseLine[a].push_back(b%2?b+1:b-1);
+        line[a%2?a+1:a-1].push_back(b); // !a -> b
+        reverseLine[b].push_back(a%2?a+1:a-1); // 역방향 그래프 추가
+        line[b%2?b+1:b-1].push_back(a); // !b -> a
+        reverseLine[a].push_back(b%2?b+1:b-1); // 역방향 그래프 추가
     }
 
     memset(visited,false,sizeof(visited));
@@ -77,6 +78,7 @@ int main(){
 
     for(int i = 1; i <= N; i++){
         if(scc[i*2-1] == scc[i*2]){
+            // a와 !a가 같은 scc 안에 포함되어 있으므로 이 명제는 성립할 수 없음
             std::cout << 0 << '\n';
             return 0;
         }

@@ -1,5 +1,6 @@
 // 가위바위보
 // 강한 연결 요소 & 2-sat
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -44,13 +45,13 @@ int main(){
 
     for(int i = 0; i < N; i++){
         int x,y;
-        std::cin >> x >> y;
-        x = x < 0 ? (-x)*2 : x*2-1;
+        std::cin >> x >> y; // x번째에 낼 것과 y번째에 낼 것
+        x = x < 0 ? (-x)*2 : x*2-1; 
         y = y < 0 ? (-y)*2 : y*2-1;
-        line[x%2?x+1:x-1].push_back(y);
-        reversed_line[y].push_back(x%2?x+1:x-1);
-        line[y%2?y+1:y-1].push_back(x);
-        reversed_line[x].push_back(y%2?y+1:y-1);
+        line[x%2?x+1:x-1].push_back(y); // !x -> y
+        reversed_line[y].push_back(x%2?x+1:x-1); // 역방향 그래프 추가
+        line[y%2?y+1:y-1].push_back(x); // !y -> x
+        reversed_line[x].push_back(y%2?y+1:y-1); // 역방향 그래프 추가
     }
 
     memset(visited,false,sizeof(visited));
@@ -76,6 +77,7 @@ int main(){
 
     for(int i = 1; i <= M; i++){
         if(scc[i*2-1] == scc[i*2]){
+            // x와 !x가 같은 scc 안에 포함되어 있으므로 이 명제는 성립할 수 없음
             std::cout << "OTL" << '\n';
             return 0;
         }
