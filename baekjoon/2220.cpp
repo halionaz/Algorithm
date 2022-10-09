@@ -24,10 +24,10 @@ int main(){
     for(int i = 2; i <= N; i++){
         arr[i] = i;
 
-        swap(i - 1, i);
+        swap(i - 1, i); // 항상 i-1에 1이 위치해 있으므로, 1과 i를 바꿔줌
 
         for(int j = i - 1; j > 1; j/=2){
-            swap(j, j/2);
+            swap(j, j/2); // 최대 힙을 만들어주는 과정
         }
     }
 

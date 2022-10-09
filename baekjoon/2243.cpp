@@ -1,5 +1,5 @@
 // 사탕상자
-// 세그먼트 트리
+// 세그먼트 트리 & 이분 탐색
 
 #include <iostream>
 #include <cmath>

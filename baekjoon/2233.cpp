@@ -1,6 +1,9 @@
 // 사과나무
 // 트리 & 최소 공통 조상
 
+// 썩은 사과 두개가 주어졌을때,
+// 그 두개의 공통 조상을 자르는 것이 답
+
 #include <iostream>
 #include <cstring>
 #include <string>
@@ -22,7 +25,10 @@ int main(){
 
     std::cin >> N;
     std::cin >> S;
+
     int cur = 0;
+
+    // 벌레 이진수를 바탕으로 트리 만들기
     for(int i = 0; i <= N+N; i++){
         if(S[i] == '1'){
             d--;
@@ -37,6 +43,8 @@ int main(){
             d++;
         }
     }
+
+    // sparse table 제작
     for(int i = 0; i < log; i++){
         for(int j = 1; j <= N; j++){
             if(parents[i][j] != -1){
@@ -44,6 +52,8 @@ int main(){
             }
         }
     }
+
+    // X와 Y의 최소 공통 조상 찾기
     std::cin >> X >> Y;
     X = binary[X-1];
     Y = binary[Y-1];
@@ -70,6 +80,7 @@ int main(){
         }
         X = parents[0][X];
     }
+    // X가 공통 조상이므로, 이진수에서 몇번째인지를 찾음
     for(int i = 0; i < N+N; i++){
         if(binary[i] == X){
             std::cout << i+1 << ' ';

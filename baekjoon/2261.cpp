@@ -39,6 +39,7 @@ int main(){
         arr.push_back(std::make_pair(x,y));
     }
 
+    // x 좌표 순으로 정렬
     std::sort(arr.begin(), arr.end());
 
     int ind = 0;

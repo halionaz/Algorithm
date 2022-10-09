@@ -12,6 +12,7 @@
 // https://nicotina04.tistory.com/223
 // 두 링크 참조
 
+#include <functional>
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -52,10 +53,10 @@ int main() {
     if (realArr.size() <= 2) {
         std::cout << 0 << '\n';
     } else {
-        std::sort(realArr.begin() + 1, realArr.end() - 1);
+        std::sort(realArr.begin() + 1, realArr.end() - 1, std::greater<int>());
 
         for (int i = 0; i < (realArr.size() - 1) / 2; i++) {
-            ans += realArr.rbegin()[1 + i];
+            ans += realArr[1 + i];
         }
 
         std::cout << ans << '\n';

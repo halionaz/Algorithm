@@ -10,6 +10,7 @@ std::vector<std::pair<int, int> > zero;
 
 void solve(int ind){
     if(ind == zero.size()){
+        // 모든 칸을 다 채움
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
                 std::cout << sudoku[i][j];
@@ -26,6 +27,8 @@ void solve(int ind){
 
         bool numList[10];
         memset(numList, true, sizeof(numList));
+
+        // 후보군을 체크해서 false로 만든 후, true로 남은 수들이 빈칸에 들어갈 후보임
 
         // 가로 세로 체크
         for(int i = 0; i< 9; i++){
@@ -67,6 +70,8 @@ int main(){
             std::cin >> c;
             sudoku[i][j] = c - '0';
             if(!sudoku[i][j]){
+                // 빈칸인 경우,
+                // 따로 저장해놓음
                 zero.push_back(std::make_pair(i,j));
             }
         }
