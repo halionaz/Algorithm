@@ -57,7 +57,7 @@ int main(){
     for(int i = 0; i < 3; i++){
         for(int j = 1; j <= N; j++){
             std::cin >> T; // 각 순위의 사람이 들어옴
-            score[T][i] = j;
+            score[T][i] = j; // T의 i번째 시험 등수는 j
         }
     }
     std::sort(score.begin(), score.end());
