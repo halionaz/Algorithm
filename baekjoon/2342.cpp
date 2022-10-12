@@ -1,5 +1,6 @@
 // Dance Dance Revolution
 // 다이나믹 프로그래밍
+// top-down
 
 // DP이긴 한데 Top-Down 방식 (재귀) 사용
 // 발의 위치와 다음 지점을 통한 DP로 기저(마지막)에 도달하면 0을 반환하고

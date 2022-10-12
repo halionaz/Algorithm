@@ -7,6 +7,7 @@ int N;
 int board[21][21];
 
 int cut(int start[2], int end[2], bool dir){
+    // dir는 자르는 방향
 
     // 아직 정답이 유효한지 판정
     int impurities = 0;
