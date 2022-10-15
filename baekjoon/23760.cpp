@@ -1,5 +1,5 @@
 // 까다로운 아이들과 선물 상자
-// 세그먼트 트리
+// 세그먼트 트리 & 이분 탐색
 
 #include <iostream>
 #include <cmath>
@@ -60,7 +60,7 @@ int main(){
         ll val;
         std::cin >> val;
         updateTree(1,1,limit, val, 1);
-        // segtree val만큼의 선물 개수가 있는 상자가 1개 늘어남
+        // val만큼의 선물 개수가 있는 상자가 1개 늘어남
     }
 
     for(int i = 0; i < M; i++){
