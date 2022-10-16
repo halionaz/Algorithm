@@ -18,4 +18,4 @@ def star(i,j,n) :
 for i in range(N) :
     for j in range(N) :
         star(i,j,N)
-    print('')
+    print()

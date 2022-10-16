@@ -29,7 +29,7 @@ int main(){
     int ansL = 0, ansR = N-1;
     ll dist = abs(arr[l] + arr[r]);
     while(l < r){
-        ll newDist = arr[l]+arr[r];
+        ll newDist = arr[l] + arr[r];
         if(abs(newDist) < dist){
             dist = abs(newDist);
             ansL = l;

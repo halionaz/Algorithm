@@ -14,17 +14,15 @@ ans = []
 while i < j :
     val = arr[i]+arr[j] 
     absVal = abs(val)
-    if val == 0 :
+    
+    if absVal < tmp :
+        tmp = absVal
         ans = [i,j]
+
+    if val == 0 :
         break
     elif val > 0 :
-        if absVal < tmp :
-            tmp = absVal
-            ans = [i,j]
         j -= 1
     else :
-        if absVal < tmp :
-            tmp = absVal
-            ans = [i,j]
         i += 1
 print(arr[ans[0]],arr[ans[1]])
