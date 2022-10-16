@@ -42,4 +42,4 @@ for _ in range(T) :
     
     ans = solve(R, C)
 
-    print(ans, ans - C)
+    print(ans, ans - C) # 다크 초콜릿의 개수는 항상 화이트 초콜릿보다 층수만큼 적음
