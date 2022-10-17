@@ -43,10 +43,3 @@ for i in range(1,10) :
                     if isRight : #모든 조건을 충족하는 수만 ans 배열에 저장
                         ans.append(i*100+j*10+l)
 print(len(ans)) #정답 배열의 길이
-
-
-
-# while True :
-#     arr = list(map(int,input().split()))
-#     a,b,c = map(int,input().split())
-#     print(baseball(arr,a,b,c))
