@@ -24,7 +24,7 @@ int main(){
         std::cin >> temps[i];
 
         if(i < K){
-            cur += temps[i];
+            cur += temps[i]; // 시작하는 합 계산
         }
     }
 
