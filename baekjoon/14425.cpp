@@ -1,5 +1,6 @@
 // 문자열 집합
 // 트리를 사용한 집합과 맵
+// 집합과 맵
 
 #include <iostream>
 #include <set>

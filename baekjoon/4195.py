@@ -1,5 +1,6 @@
 # 친구 네트워크
 # 분리 집합 & 해시를 사용한 집합과 맵
+# 집합과 맵
 
 import sys
 input = sys.stdin.readline

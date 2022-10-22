@@ -1,5 +1,6 @@
 # 나는야 포켓몬 마스터 이다솜 
 # 해시를 사용한 집합과 맵
+# 집합과 맵
 
 import sys
 input = sys.stdin.readline
