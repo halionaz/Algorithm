@@ -31,8 +31,8 @@ int main(){
     load.resize(N);
 
     for(int i = 0; i < N; i++){
-        std::cin >> load[i].first;
-        load[i].second = i;
+        std::cin >> load[i].first; // 짐의 무게
+        load[i].second = i; // 짐의 원래 위치 인덱스
     }
 
     std::sort(load.begin(), load.end());
@@ -41,6 +41,8 @@ int main(){
     for(int i = 0; i < N; i++){
         if(!visited[i]){
             int cnt = 0;
+
+            // 일단 바꿔야 할 짐들은 무조건 그 무게가 답에 반영되므로 더해줌
             for(int j = i; !visited[j]; j = load[j].second){
                 // 사이클이 있으니 언젠간 이미 visited했던 노드로 돌아옴
                 visited[j] = true;
@@ -48,10 +50,15 @@ int main(){
                 // 짐 무게 만큼 답에 추가
                 cnt++;
             }
+            
+            // 이제 앞서 짐들을 바꿀 때 사용할 최소 무게 짐을 정해주는 작업
+
             // 전체 짐 중 최소 무게 짐을 사이클 내 최소 짐과 바꿔치기 한 후, 짐을 정리하고
             // 다시 최소 무게 짐과 최소 짐을 바꿔치는 경우
+            // load[0].first*(cnt+1) (전체 짐 중 최소 무게) + load[i].first (사이클 내 최소 짐)
             // VS
             // 사이클 내 최소 짐으로 짐을 정리하는 경우
+            // load[i].first*(cnt-2)
             ans += std::min(load[0].first*(cnt+1) + load[i].first,
             load[i].first*(cnt-2)
             );

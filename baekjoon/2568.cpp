@@ -1,7 +1,9 @@
 // 전깃줄 - 2
 // 가장 긴 증가하는 부분 수열: o(n log n)
 
-// LIS
+// 2565와 같은 문제이지만
+// 계산량이 훨씬 늘어났고, 또 없애야 하는 전깃줄의 번호를 출력해야 함
+// o(n log n)의 시간 복잡도를 가지도록 구현
 
 #include <iostream>
 #include <vector>
@@ -74,7 +76,7 @@ int main(){
     }
     for(int i = 0; i < N; i++){
         if(!ans.count(inpArr[Aarr[i]])){
-            realAns.push_back(Aarr[i]);
+            realAns.push_back(Aarr[i]); // ans에 없는 애들이 없애야 할 전깃줄
         }
     }
     std::sort(Aarr.begin(),Aarr.end());

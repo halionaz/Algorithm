@@ -1,5 +1,5 @@
 # 소수
-# 소수 판정 & 에라토스테네스의 체
+# 소수 판정
 
 # M = int(input())
 # N = int(input())
@@ -30,16 +30,18 @@ N = int(input())
 
 sum = 0
 min = 0
-for i in range(N-M+1) :
+for i in range(M, N+1) :
+    # i가 소수임을 판별
     isDecimal = True
-    for j in range(M+i) :
-        if (j!=0 and j!=1 and (M+i)%j==0) or M+i == 1 :
+    for j in range(2, i) :
+        if i % j == 0:
             isDecimal = False
             break
-    if isDecimal :
+    if i != 1 and isDecimal :
         if sum == 0 :
-            min = M+i
-        sum += M+i
+            # 최초로 나온 소수가 최솟값
+            min = i
+        sum += i
 
 if sum == 0 :
     print(-1)

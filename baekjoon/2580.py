@@ -1,5 +1,6 @@
 # 스도쿠
 # 백트래킹
+# py_output_at_once
 
 import sys
 sudoku = [list(map(int,input().split())) for _ in range(9)]

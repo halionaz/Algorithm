@@ -2,17 +2,17 @@
 # 구현
 
 bingo = []
-사회자 = []
+MC = []
 for _ in range(5) :
     bingo.append(list(map(int,input().split())))
 for _ in range(5) :
     for i in list(map(int,input().split())) :
-        사회자.append(i)
+        MC.append(i)
 for i in range(25) :
     score = 0
     for j in range(5) : #빙고 지우기 수행
-        if 사회자[i] in bingo[j] :
-            bingo[j][bingo[j].index(사회자[i])] = 0
+        if MC[i] in bingo[j] :
+            bingo[j][bingo[j].index(MC[i])] = 0
     if i > 9 :
         isCross1True = isCross2True = 1
         for j in range(5) :
