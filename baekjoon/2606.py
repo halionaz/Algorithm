@@ -1,5 +1,5 @@
 # 바이러스
-# 너비 우선 탐색 & 깊이 우선 탐색
+# 그래프 탐색 & 너비 우선 탐색 & 깊이 우선 탐색
 
 import sys
 input = sys.stdin.readline

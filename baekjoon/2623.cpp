@@ -9,12 +9,20 @@ int inputCnt[1001] = {0}, tmpInput[1001];
 std::vector<int> line[1001];
 
 int main(){
+
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+
     std::cin >> N >> M;
+
     for(int i = 0; i<M; i++){
+
         std::cin >> singerNum;
+
         for(int j = 0; j < singerNum; j++){
             std::cin >> tmpInput[j];
         }
+
         for(int j = 0; j < singerNum-1; j++){
             for(int l = j+1; l < singerNum; l++){
                 line[tmpInput[j]].push_back(tmpInput[l]);
@@ -22,13 +30,17 @@ int main(){
             }
         }
     }
+
     std::queue<int> q;
+
     for(int i = 1; i <= N; i++){
         if(inputCnt[i]==0){
             q.push(i);
         }
     }
+
     std::vector<int> ans;
+    
     for(int i = 1; i <= N; i++){
         if(q.empty()){
             std::cout << 0 <<'\n';

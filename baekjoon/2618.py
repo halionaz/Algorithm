@@ -1,5 +1,6 @@
 # 경찰차
 # 다이나믹 프로그래밍
+# bottom-up
 
 import sys
 input = sys.stdin.readline
