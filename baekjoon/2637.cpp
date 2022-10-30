@@ -1,5 +1,5 @@
 // 장난감 조립
-// 위상 정렬 & 다이나믹 프로그래밍
+// 위상 정렬
 
 // 역행 간선을 저장하여 위상 정렬시키는 방법과
 // 2차원 dp로 각 부품의 필요 개수를 계속해서 저장하는 방법이 있음
@@ -26,8 +26,10 @@ int main(){
 
     std::cin >> N >> M;
 
+    // 역간선으로 저장
     for(int i = 0; i < M; i++){
         std::cin >> X >> Y >> K;
+        // line[i] :: i를 만들기 위해 필요한 부품과 그 개수
         line[X].push_back(std::make_pair(Y,K));
         indegree[Y]++;
     }
@@ -40,6 +42,7 @@ int main(){
         que.pop();
 
         if(line[cur].empty()){
+            // cur을 만들기 위해 필요한 부품이 없으므로 기본 부품임
             ans.push_back(cur);
         }
 

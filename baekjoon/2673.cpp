@@ -1,5 +1,6 @@
 // 교차하지 않는 원의 현들의 최대 집합
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 #include <algorithm>
@@ -26,6 +27,8 @@ int main(){
     for(int i = 1; i <= 100; i++){
         for(int j = i; j >= 1; j--){
             for(int k = j; k < i; k++){
+                // j ~ i 까지 현 중 교차하지 않는 현은
+                // j ~ k 까지 현 중 교차하지 않는 현 + k ~ i 까지 현 중 교차하지 않는 현 + j와 i를 잇는 현 (1게)
                 dp[j][i] = std::max(dp[j][i], dp[j][k] + dp[k][i] + arr[j][i]);
             }
         }

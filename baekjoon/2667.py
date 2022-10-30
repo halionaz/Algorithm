@@ -57,7 +57,9 @@ for i in range(N) :
         if world[i][j] == 1 :
             bfs(i,j)
             num.append([num[-1][0]+1,0])
+
 num = sorted(num,key=lambda l:l[1])[1:]
+
 print(len(num))
 for i in num :
     print(i[1])

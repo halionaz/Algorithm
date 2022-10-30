@@ -1,7 +1,6 @@
 // 격자점 컨벡스헐
-// 볼록 껍질
-
-// 컨벡스 헐인데 ... 어렵다
+// 기하학 & 볼록 껍질
+// ccw 알고리즘 & 그라함 스캔 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -24,10 +23,12 @@ ll dist(dot a, dot b) {
 
 bool cmp(const dot& a, const dot& b) {
 	int val = ccw(dots[0], a, b);
-	if (val < 0) return true;
-	if (val > 0) return false;
-	if (dist(dots[0], a) < dist(dots[0], b)) return true;
-	return false;
+    if(val){
+        return val < 0;
+    } else {
+        // ccw가 0일 경우 (직선일 경우) 시작점으로부터 거리가 짧은 순으로
+        return dist(dots[0], a) < dist(dots[0], b);
+    }
 }
 
 int main() {
@@ -48,18 +49,22 @@ int main() {
         }
 
         int temp = 0;
-        for (int i = 1;i < dots.size();i++){
+        for (int i = 1; i < dots.size();i++){
             if (dots[i].y > dots[temp].y || (dots[i].y == dots[temp].y && dots[i].x < dots[temp].x)){
                 temp = i;
             }
         }
 
-        std::swap(dots[temp], dots[0]);
+        std::swap(dots[temp], dots[0]); // 시작점 지정
         std::sort(dots.begin() + 1, dots.end(), cmp);
 
         std::vector<dot> stack;
 
         for (int i = 0; i < dots.size(); i++) {
+
+            // 스택에 두 개 보다 많은 점이 들어가 있을 때,
+            // ccw로 외곽점 체크
+            // 꼭짓점이 아니라 외곽선 위에 있더라도 답에 포함
             while (2 <= stack.size() && ccw(stack[stack.size() - 2], stack[stack.size() - 1], dots[i]) >= 0){
                 stack.pop_back();
             }
