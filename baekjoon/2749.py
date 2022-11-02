@@ -3,6 +3,7 @@
 
 n = int(input())
 eM = [[1,1],[1,0]]
+
 def multiple(mat1, mat2) :
     ans = []
     for i in range(len(mat1)) :
@@ -14,6 +15,7 @@ def multiple(mat1, mat2) :
             row.append(element%1000000)
         ans.append(row)
     return ans
+
 def square(mat, N) :
     if N == 1 :
         return mat
@@ -23,4 +25,5 @@ def square(mat, N) :
             return multiple(arr, arr)
         else :
             return multiple(multiple(arr, arr), mat)
+
 print(square(eM, n)[0][1])
