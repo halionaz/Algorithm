@@ -1,5 +1,5 @@
 // 롤러코스터
-// 그리디 알고리즘
+// 그리디 알고리즘 & 구성적
 
 #include <iostream>
 #include <string>
@@ -22,11 +22,20 @@ int main(){
     }
 
     if(R % 2 == 0 && C % 2 == 0){
+
+        // 좌표가 짝수인 경우,
+        // 모든 칸을 지나가는 것은 불가능
+
+        // 다만 하나의 칸만 제외하고 (단 그 칸은 i+j가 홀수인 경우에서만 발생)
+        // 모든 칸을 지나갈 수는 있으므로
+        // 최솟값을 가지는 타일만 제외하면 됨
+
         int minVal = 1005;
-        int minCoo[2];
+        int minCoo[2]; // 최솟값을 가지는 좌표 저장
+
         for(int i = 0; i < R; i++){
             for(int j = 0; j < C; j++){
-                if((i+j)%2 && arr[i][j] < minVal){
+                if((i+j) % 2 && arr[i][j] < minVal){
                     minVal = arr[i][j];
                     minCoo[0] = i; minCoo[1] = j;
                 }
@@ -34,7 +43,7 @@ int main(){
         }
 
         // minCoo만 안지나가면 됨
-        
+
         for(int i = 0; i < (minCoo[0]%2 ? minCoo[0] - 1 : minCoo[0]); i++){
             for(int j = 0; j < C - 1; j++){
                 if(i%2){
@@ -73,6 +82,10 @@ int main(){
         }
 
     } else {
+
+        // 무조건 모든 칸을 지나가는 것이
+        // 가장 큰 기쁨을 가짐
+
         if(R % 2){
             for(int i = 0; i < R; i++){
                 for(int j = 0; j < C - 1; j++){

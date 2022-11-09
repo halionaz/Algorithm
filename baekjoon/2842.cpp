@@ -1,5 +1,5 @@
 // 집배원 한상덕
-// 깊이 우선 탐색 & 두 포인터
+// 깊이 우선 탐색 & 두 포인터 & 매개 변수 탐색
 
 #include <iostream>
 #include <utility>
@@ -61,6 +61,7 @@ int main(){
             }
         }
     }
+
     for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++){
             std::cin >> altitude[i][j];
