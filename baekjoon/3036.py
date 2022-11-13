@@ -1,5 +1,5 @@
 # 링
-# 유클리드 호제법 & 수학
+# 유클리드 호제법 & 수학 & 정수론
 
 # math 라이브러리 사용 X
 
@@ -10,8 +10,11 @@ def gcd(a,b) :
         return a
     else :
         return gcd(b,a%b)
+
 N = int(input())
+
 arr = list(map(int, input().split()))
+
 for i in range(1,N) :
     g = gcd(arr[0], arr[i])
     print('{}/{}'.format(arr[0]//g,arr[i]//g))

@@ -1,7 +1,9 @@
 // 007
 // 다이나믹 프로그래밍 & 비트마스킹 & 비트필드를 이용한 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
+#include <algorithm>
 
 int N;
 int percent[20][20];
@@ -32,10 +34,14 @@ int main(){
     }
 
     for(int i = 0; i < (1<<N); i++){
-        int k = bitCount(i);
+        
+        // 지금까지 0 ~ k-1까지 임무가 수행됨, 즉 k번째 임무 수행할 차례
+        int k = bitCount(i); 
+
         for(int j = 0; j < N; j++){
             if(!(i&(1<<j))){
-                dp[i|(1<<j)] = dp[i] * ((double)percent[j][k])/100.0 > dp[i|(1<<j)] ? dp[i] * ((double)percent[j][k])/100.0 : dp[i|(1<<j)];
+                // 아직 미션을 수행하지 않은 지미 본드에게 일 할당
+                dp[i|(1<<j)] = std::max(dp[i] * ((double)percent[j][k])/100.0 , dp[i|(1<<j)]);
             }
         }
     }

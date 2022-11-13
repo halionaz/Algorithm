@@ -9,7 +9,7 @@ const int inf = 2147483640;
 
 int R,C;
 char forest[50][50];
-int waterArrived[50][50];
+int waterArrived[50][50]; // 물이 각 칸에 도착하기까지 걸리는 시간
 bool visited[50][50];
 int dx[4] = {0, 0, 1, -1};
 int dy[4] = {1, -1, 0, 0};
@@ -27,8 +27,10 @@ int main(){
 
     for(int i = 0; i < R; i++){
         for(int j = 0; j < C; j++){
+
             std::cin >> forest[i][j];
             waterArrived[i][j] = inf;
+
             if(forest[i][j] == 'S'){
                 hedgeStart[0] = i;
                 hedgeStart[1] = j;
