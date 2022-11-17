@@ -9,8 +9,8 @@
 int N;
 long long ans = 0;
 std::vector<std::vector<int> > arr;
-std::vector<int> cntTree; // cnt의 값 저장
-std::vector<int> segTree; // cnt가 1 이상인 y 개수 저장
+std::vector<int> cntTree; // y축 구간에 대한 cnt 저장
+std::vector<int> segTree; // cnt가 1 이상인 y좌표 개수 저장
 
 void updateTree(int node, int s, int e, int l, int r, int diff){
     if(r < s || e < l){
@@ -36,8 +36,6 @@ void updateTree(int node, int s, int e, int l, int r, int diff){
     }
 }
 
-// int query(int node, int )
-
 int main(){
 
     std::ios_base::sync_with_stdio(0);
@@ -53,26 +51,35 @@ int main(){
         std::vector<int> vec1, vec2;
         int x1,y1,x2,y2;
         std::cin >> x1 >> y1 >> x2 >> y2;
+
+        // 왼쪽 선분
         vec1.push_back(x1);
         vec1.push_back(y1);
         vec1.push_back(y2);
         vec1.push_back(0);
+
+        // 오른쪽 선분
         vec2.push_back(x2);
         vec2.push_back(y1);
         vec2.push_back(y2);
         vec2.push_back(1);
+
         arr.push_back(vec1);
         arr.push_back(vec2);
     }
 
+    // x 기준으로 선분들 정렬
     std::sort(arr.begin(),arr.end());
 
     for(int i = 0; i < arr.size(); i++){
-        if(i){
+        
+        if(i > 0){
             ans += (arr[i][0] - arr[i-1][0]) * segTree[1];
         }
+
+        // 현재 세로변이 왼쪽 선분이라면 diff는 1, 오른쪽 선분이면 0
         int diff = arr[i][3] ? -1 : 1;
-        // int diff = 1;
+
         updateTree(1,0,30000,arr[i][1],arr[i][2]-1,diff);
     }
 

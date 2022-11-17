@@ -21,7 +21,7 @@ else :
             ans+=1
             i += 1
             j -= 1
-        elif arr[i]+arr[j] > x :
+        elif arr[i] + arr[j] > x :
             j -= 1
         else :
             i += 1

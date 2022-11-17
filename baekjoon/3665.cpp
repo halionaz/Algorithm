@@ -9,23 +9,36 @@ int N;
 int inpNum[501];
 int order[501];
 int line[501][501];
+
 int main(){
+    
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+
     int T,M;
-    std::cin>>T;
+    std::cin >> T;
+
     while(T--){
+
         memset(inpNum,0,sizeof(inpNum));
         memset(line,0,sizeof(line));
+
         std::cin >> N;
+
         for(int i = 1; i < N+1; i++){
             std::cin >> order[i];
         }
+
+        // 작년 순위를 기준으로 한 위상
         for(int i = 1; i < N+1; i++){
             for(int j = i+1; j < N+1; j++){
                 line[order[i]][order[j]] = 1;
                 inpNum[order[j]]++;
             }
         }
+
         std::cin >> M;
+
         for(int j = 0; j < M; j++){
             int a,b;
             std::cin >> a >> b;
@@ -41,14 +54,18 @@ int main(){
                 inpNum[b]++;
             }
         }
+
         std::queue<int> q;
         std::vector<int> ans;
+
         for(int i = 1; i <= N; i++){
             if(!inpNum[i]){
                 q.push(i);
             }
         }
+
         int manyAns = 0;
+        
         while(!q.empty()){
             if(q.size() > 1){
                 // 큐에 들어있는 개수가 1보다 크다는 것은
@@ -69,6 +86,7 @@ int main(){
                 }
             }
         }
+
         if(ans.size() != N){
             // inp degree가 0이 아니고 아직 남아서
             // 탐색을 거치지 못한 노드가 남아 있으므로

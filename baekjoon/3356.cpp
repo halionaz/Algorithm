@@ -2,6 +2,7 @@
 // kmp
 
 // kmp의 실패 함수를 이용하여 푸는 문제
+// 1305와 동일함
 
 #include <iostream>
 #include <string>
