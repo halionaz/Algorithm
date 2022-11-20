@@ -66,13 +66,14 @@ int main(){
         std::cout << "Test case #" << ind << '\n';
         std::string S;
         std::cin >> S;
-        p = getPi(S);
+        p = getPi(S); // 실패함수 이용한 접두어-접미어 관계 구하기
 
         for(int i = 1; i < N; i++){
-            if(p[i] != 0){
-                int len = i+1;
-                int gcd = GCD(len, p[i]);
+            if(p[i] != 0){ // 주기가 있는 접두사 등장
+                int len = i+1; // 접두사 길이
+                int gcd = GCD(len, p[i]); // 주기문의 길이
                 if(p[i] + gcd == len){
+                    // 겹치지 않는다면
                     std::cout << len << ' ' << len/gcd << '\n';
                 }
             }

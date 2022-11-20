@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-const int inf = 2147483640;
+const int inf = 987654321;
 
 int R,C;
 char maze[1000][1000];
@@ -32,18 +32,23 @@ int main(){
 
     for(int i = 0; i < R; i++){
         for(int j = 0; j < C; j++){
+
             std::cin >> maze[i][j];
+
             fireArrival[i][j] = inf;
+
             if(maze[i][j] == 'J'){
+                // 지훈이 스타팅 지점
                 jihoonStart[0] = i;
                 jihoonStart[1] = j;
                 jihoonStart[2] = 0;
             } else if (maze[i][j] == 'F'){
+                // 불이 있는 지점
                 std::pair<int, int> fireStart;
                 fireStart.first = i;
                 fireStart.second = j;
                 que.push(fireStart);
-                fireArrival[i][j] = 0;
+                fireArrival[i][j] = 0; // 여기서 시작함, 즉 0분만에 불 도달
             }
         }
     }
@@ -80,7 +85,8 @@ int main(){
         jihoonQue.pop();
 
         if(cur[0] == 0 || cur[1] == 0 || cur[0] == R-1 || cur[1] == C-1){
-            std::cout << cur[2]+1 << '\n';
+            // 미로 밖에 도달
+            std::cout << cur[2] + 1 << '\n';
             return 0;
         }
 

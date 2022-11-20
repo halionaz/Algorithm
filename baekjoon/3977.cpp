@@ -1,5 +1,6 @@
 // 축구 전술 
 // 강한 연결 요소
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <stack>
@@ -90,6 +91,9 @@ int main(){
         for(int i = 0; i < N; i++){
             for(int j = 0; j < line[i].size(); j++){
                 if(scc[i] != scc[line[i][j]]){
+                    // i구역에서 line[i][j]구역으로 가야하는데,
+                    // 둘이 같은 scc에 속하진 않음.
+                    // line[i][j]구역에서 i구역으로 갈 수는 없음
                     sccInpNum[scc[line[i][j]]]++;
                 }
             }
@@ -101,12 +105,14 @@ int main(){
 
         for(int i = 0; i <= ind; i++){
             if(sccInpNum[i] == 0){
+                // 이곳에서 시작해야됨
                 confused++;
                 ansInd = i;
             }
         }
 
         if(confused > 1){
+            // 시작해야하는 구역이 많아, 하나의 시작구역을 정할 수 없음
             std::cout << "Confused\n";
         } else {
             for(int i = 0; i < N; i++){
