@@ -64,14 +64,14 @@ int main() {
 
             // 스택에 두 개 보다 많은 점이 들어가 있을 때,
             // ccw로 외곽점 체크
-            // 꼭짓점이 아니라 외곽선 위에 있더라도 답에 포함
+            // 꼭짓점이 아니라 외곽선 위에 있다면 답에 미포함
             while (2 <= stack.size() && ccw(stack[stack.size() - 2], stack[stack.size() - 1], dots[i]) >= 0){
                 stack.pop_back();
             }
             stack.push_back(dots[i]);
         }
 
-        std::cout << stack.size()<<'\n';
+        std::cout << stack.size() << '\n';
 
         for (int i = 0;i < stack.size();i++){
             std::cout << stack[i].x << " " << stack[i].y << '\n';
