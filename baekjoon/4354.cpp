@@ -24,18 +24,25 @@ std::vector<int> findPi(std::string s){
     }
     return pi;
 }
+
 int main(){
     std::string S;
     while(1){
+
         std::cin >> S;
+
         if(S == "."){
             break;
         }
+
         std::vector <int> pi = findPi(S);
         int len = S.length();
         if(len%(len-pi[len-1])){
+            // 나누어 떨어지지 않는다면
             std::cout << 1 << '\n';
         } else {
+            // (전체 길이 - 가장 긴 접두사/접미사 길이)로 전체 길이가 나눠 떨어진다면
+            // (전체 길이 - 가장 긴 접두사/접미사 길이)가 반복되는 문자열임
             std::cout<< len/(len-pi[len-1]) << '\n';
         }
     }

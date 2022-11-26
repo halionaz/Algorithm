@@ -1,5 +1,6 @@
 // 성격 진단 테스트
 // 강한 연결 요소
+// 코사라주 알고리즘
 
 // 그다지 어렵지 않았던 scc 문제
 // 우선순위를 그래프로 나타냈을 때, scc가 등장하면 모순임
@@ -70,7 +71,7 @@ int main(){
                 isInCase[inp[j]] = true;
             }
             char base;
-            std::cin >> base;
+            std::cin >> base; // 5개 중 선호한 활동
             int b = base - 'A';
             for(int j = 0; j < 5; j++){
                 if(b != inp[j]){
@@ -102,7 +103,7 @@ int main(){
             if(!visited[stck.top()]){
                 scc_vec.push_back(std::vector<int>());
                 rev_dfs(stck.top());
-                std::sort(scc_vec[ind].begin(), scc_vec[ind].end());
+                std::sort(scc_vec[ind].begin(), scc_vec[ind].end()); // 각 scc 내 활동 알파벳 순 정렬
                 ind++;
             }
             stck.pop();

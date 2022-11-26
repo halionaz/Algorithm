@@ -1,7 +1,11 @@
 // 사랑과 전쟁
 // 강한 연결 요소 & 2-sat
+// 코사라주 알고리즘
 
-// 약간 미친 문제
+// 문제 상황이 미친 문제
+// "평소 어둠의 커뮤니티 고동넷의 회원이던 철승이는 이 파티에 자주 보던 얼굴들이 있는 것을 발견했고, 
+// 한 사람의 귀띔으로 이 부부들 사이에는 수 많은 불륜 관계가 있다는 것을 알게 되었다"
+// "각 부부는 서로 이성이지만, 불륜 관계는 동성간에도 일어날 수 있음에 주의하라"
 
 #include <iostream>
 #include <stack>
@@ -62,7 +66,11 @@ int main(){
             break;
         }
 
-        // 보람이는 무조건 1
+        // 보람이는 무조건 1, 즉 철승이는 무조건 0
+        // 앞으로 모든 불륜 관계인 사람 두명 다 1이거나, 한명만 0이어야 함
+        // 즉, 불륜 관계인 두 사람 모두가 0일 수는 없음
+
+        // 보람이가 1이어야 하므로 보람∨보람 도 관계식에 추가
         line[2].push_back(1);
         rev_line[1].push_back(2);
 
@@ -74,9 +82,9 @@ int main(){
             aN++; bN++;
             aN = aC == 'w' ? aN*2-1 : aN*2;
             bN = bC == 'w' ? bN*2-1 : bN*2;
-            line[aN%2?aN+1:aN-1].push_back(bN);
+            line[aN%2?aN+1:aN-1].push_back(bN); // aN이 0이면 bN은 1
             rev_line[bN].push_back(aN%2?aN+1:aN-1);
-            line[bN%2?bN+1:bN-1].push_back(aN);
+            line[bN%2?bN+1:bN-1].push_back(aN); // bN이 0이면 aN은 1
             rev_line[aN].push_back(bN%2?bN+1:bN-1);
         }
 
@@ -105,6 +113,7 @@ int main(){
 
         for(int i = 1; i <= N; i++){
             if(scc[i*2-1] == scc[i*2]){
+                // 부부가 같은 scc에 포함됨
                 canAns = false;
                 break;
             }

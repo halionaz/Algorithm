@@ -10,10 +10,13 @@ location = []
 for _ in range(n) :
     location.append(tuple(map(float,input().split())))
 line = []
+
+# 각 별의 길이 관계 측정
 for i in range(n-1) :
     for j in range(i+1,n) :
         dist = ((location[i][0]-location[j][0])**2+(location[i][1]-location[j][1])**2)**0.5
         line.append((dist,i,j))
+
 line.sort()
 parent = [0]*n
 for i in range(n):

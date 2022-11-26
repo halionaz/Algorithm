@@ -22,6 +22,7 @@ int main(){
     std::cin.tie(0);
 
     while(true){
+
         ind++;
 
         std::cin >> N;
@@ -46,12 +47,14 @@ int main(){
             pq.pop();
 
             if(memo[cur.first][cur.second] < curCost){
+                // 이미 더 짧은 경로로 탐색됨
                 continue;
             }
+
             for(int i = 0; i < 4; i++){
                 int nextX = cur.first + dx[i];
                 int nextY = cur.second + dy[i];
-                if(0 <= nextX && nextX < N && 0<= nextY && nextY < N){
+                if(0 <= nextX && nextX < N && 0 <= nextY && nextY < N){
                     int newCost = curCost + cost[nextX][nextY];
                     if(newCost < memo[nextX][nextY]){
                         memo[nextX][nextY] = newCost;

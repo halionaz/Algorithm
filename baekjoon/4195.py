@@ -6,12 +6,14 @@ import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
 T = int(input())
+
 def find(x) :
     if parents[x] == x :
         return x
     else :
         parents[x] = find(parents[x])
         return parents[x]
+
 def union(a,b) :
     x = find(a)
     y = find(b)
@@ -22,10 +24,11 @@ def union(a,b) :
         else :
             parents[x] = y
             cnt[y] += cnt[x]
+
 for _ in range(T) :
     F = int(input())
     parents = {}
-    cnt = {}
+    cnt = {} # 각 네트워크에 포함된 인원 수 저장
     for _ in range(F) :
         A,B = input().rstrip().split()
         if A not in parents :

@@ -46,12 +46,14 @@ int main(){
 
         std::cin >> N >> M;
         
+        // 초기화
         memset(visited,false,sizeof(visited));
         for(int i = 1; i <= N; i++){
             line[i].clear();
         }
         while(!S.empty()) S.pop();
 
+        // 블럭 사이 관계 입력 받기
         for(int i = 0; i < M; i++){
             int x,y;
             std::cin >> x >> y;

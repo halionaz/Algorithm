@@ -33,21 +33,25 @@ int main(){
         for(int i = 0; i < N; i++){
             arr[i].resize(4);
             std::cin >> arr[i][1] >> arr[i][2] >> arr[i][3];
-            arr[i][0] = abs(arr[i][2] - arr[i][3]);
+            arr[i][0] = abs(arr[i][2] - arr[i][3]); // A방과 B방 까지의 거리 차
         }
 
-        std::sort(arr.begin(), arr.end(), cmp);
+        std::sort(arr.begin(), arr.end(), cmp); // 내림차순
 
         int ans = 0;
 
         for(int i = 0; i < N; i++){
+            // 가까운 방 선택
             int &from = arr[i][2] > arr[i][3] ? B : A;
             if(from){
-                int cnt = std::min(from, arr[i][1]);
+                // 가까운 방에 풍선이 있다면
+                int cnt = std::min(from, arr[i][1]); // 풍선을 몇개까지 꺼내올 수 있는지 계산
                 from -= cnt;
                 arr[i][1] -= cnt;
                 ans += cnt*std::min(arr[i][2], arr[i][3]);
             }
+
+            // 방에 필요한데 아직 수급 못한 나머지 풍선이 있다면 먼 방에서 수급
             ans += std::max(arr[i][2], arr[i][3])*arr[i][1];
         }
 
