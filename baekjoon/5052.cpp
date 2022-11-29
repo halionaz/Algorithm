@@ -17,9 +17,10 @@ struct Node{
     }
 };
 
-int insert(Node &cur, std::string str, int ind){
+bool insert(Node &cur, std::string str, int ind){
     if(ind == str.length()){
         if(cur.childCnt > 0){
+            // str는 다 눌렸는데, 더 내려갈 노드가 있으므로, 이 str에서 더 눌러서 걸 수 있는 번호가 있음
             return 0;
         } else {
             cur.finish = true;
@@ -27,10 +28,12 @@ int insert(Node &cur, std::string str, int ind){
         }
     } else {
         if(!cur.child.count(str[ind])){
+            // 이 문자가 없으면
             cur.child[str[ind]] = Node();
             cur.childCnt+=1;
         } else {
             if(cur.child[str[ind]].finish){
+                // 여기에서 끝나는 번호가 이미 있는데, 현재 번호는 더 누를 수 있는 아이라면
                 return 0;
             }
         }

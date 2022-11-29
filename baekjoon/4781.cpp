@@ -13,6 +13,7 @@ int N, C, M;
 double F, P;
 
 std::pair<int, int> candy[5001];
+// memo[j] :: j의 돈을 가졌을 때 가질 수 있는 최대 칼로리 합
 int memo[100 * 100 + 1];
 
 int main(void){
@@ -24,15 +25,18 @@ int main(void){
         std::cin >> N >> F;
 
         if (N == 0 && F == 0.00){
+            // 문제 끝내기
             break;
         }
 
+        // 부동 소수점 오류 없애기
         M = F*100 + 0.5;
 
         for (int i = 0; i < N; i++){
 
             std::cin >> C >> P;
 
+            // 부동 소수점 오류 없애기
             candy[i] = std::make_pair(C, (int)(P * 100 + 0.5));
         }
 

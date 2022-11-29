@@ -6,7 +6,7 @@ while True :
     if n == 0 :
         break
     else :
-        arr = [True]*(2*n+1)
+        arr = [True]*(2*n+1) # 소수 여부를 담고 있는 리스트
         arr[0],arr[1] = False,False
         for i in range(int((2*n+1)**0.5)+1) :
             if arr[i] :
