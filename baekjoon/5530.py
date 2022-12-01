@@ -18,7 +18,7 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 S = input().rstrip();
-arr = []
+arr = [] # I가 써져있는 원판의 인덱스만 따로 저장
 for ind, c in enumerate(S) :
     if c == 'I' :
         arr.append(ind)
@@ -39,10 +39,13 @@ def can_be(x) :
             end += 1
     return x == end
 
-ans = 0
-
 l = 1
 r = len(arr)
+# I 기준으로 아래쪽, 원판이 큰 I는 미니 JOIOI 탑의 바닥을 이루는 I이고
+# 위쪽, 원판이 작은 I는 탑의 천장을 이룰 것임
+# 따라서 I의 어디에서 바닥과 천장을 나눌 것인지가 답을 결정
+
+# 답이 될 수 있는 최댓값은 I의 개수이고, 최솟값은 1
 
 while l <= r :
     limit = (l + r)//2
@@ -55,4 +58,4 @@ while l <= r :
         # 만족하는 경우가 없으므로 끝 I 개수 늘리기
         r = limit - 1
 
-print(ans)
+print(r)

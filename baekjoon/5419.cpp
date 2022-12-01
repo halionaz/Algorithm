@@ -57,24 +57,27 @@ int main() {
         memset(yPosCnt, 0, sizeof(yPosCnt));
         long long res = 0;
 
-        scanf("%d", &N);
+        scanf("%d", &N); // 섬의 개수
 
-        std::vector<int> yPosition;
+        std::vector<int> yPosition; // 섬의 y 좌표만 모아 저장
 
         for (int i = 0; i < N; i++) {
             scanf("%d%d", &x, &y);
             yPosition.push_back(y);
-            a[i] = std::make_pair(x,y);
+            a[i] = std::make_pair(x,y); // 실제 좌표는 따로 저장
         }
 
-        sort(a, a + N, compare);
+        sort(a, a + N, compare); // x좌표를 기준으로 오름차순 정렬하고, 좌표가 같다면 y좌표 내림차순 
         sort(yPosition.begin(), yPosition.end());
         yPosition.erase(unique(yPosition.begin(), yPosition.end()), yPosition.end());
         // 중복되는 것 삭제
 
+        // 반복문은 x좌표가 작은 섬부터 돌게 됨
         for (int i = 0; i < N; i++) {
+            // 현재 섬의 y값이 전체 섬에서 몇번째로 큰 값인지 구하기
             int z = lower_bound(yPosition.begin(), yPosition.end(), a[i].second) - yPosition.begin();
             yPosCnt[z]++;
+            // 현재 섬보다 x값이 작은 섬 중에 y값이 더 큰 섬이 몇개인지 구하기
             res += (long long)searchTree(1, 0, N - 1, z, N - 1);
             updateTree(1, 0, N - 1, z, yPosCnt[z]);
         }
