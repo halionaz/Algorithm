@@ -1,8 +1,10 @@
 // Mowing the Lawn
-// 다이나믹 프로그래밍 & 덱을 이용한 다이나믹 프로그래밍
+// 다이나믹 프로그래밍 & 덱을 이용한 다이나믹 프로그래밍 & 누적 합 & 슬라이딩 윈도우
+// bottom-up
 
-// 슬라이딩 윈도우 기법
+
 // dp[i] = max(Esum[i] - Esum[j] + dp[j-1]) (i-K <= j <= i)  :: j+1 ~ i 까지의 합 + j까지의 최대 효율
+// =
 // dp[i] = Esum[i] + max(dp[j-1] - Esum[j]) (i-K <= j <= i)
 // dp[j-1] - Esum[j]의 최댓값을 탐색
 
@@ -13,7 +15,7 @@
 typedef long long ll;
 
 int N, K;
-ll Esum[100001] = {0,};
+ll Esum[100001] = {0,}; // 소 효율의 누적 합
 ll dp[100001];
 std::deque<int> deq; //index 값만 저장하면 되므로 int
 

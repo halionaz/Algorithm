@@ -1,5 +1,6 @@
 // 음주 코딩 
 // 세그먼트 트리
+// inf_input
 
 #include <iostream>
 #include <vector>

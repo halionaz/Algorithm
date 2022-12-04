@@ -1,5 +1,6 @@
 // 휴대폰 자판 
 // 트라이
+// inf_input
 
 #include <iostream>
 #include <iomanip>
@@ -39,6 +40,7 @@ void dfs(Node &cur, std::string str,int len, int ind){
         return;
     } else {
         if(initial){
+            // 처음은 무조건 하나는 입력해야 함
             initial = false;
             sum++;
         } else if(cur.childCnt > 1 || cur.finish){

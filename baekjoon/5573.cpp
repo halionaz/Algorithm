@@ -1,5 +1,6 @@
 // 산책
 // 다이나믹 프로그래밍
+// bottom-up
 
 #include <iostream>
 
@@ -39,14 +40,16 @@ int main(){
 
     for(int i = 1; i <= H; i++){
         for(int j = 1; j <= W; j++){
+            // 들른 횟수 갱신
             dp[i+1][j] += dp[i][j]/2;
             dp[i][j+1] += dp[i][j]/2;
             if(dp[i][j]%2){
+                // 들른 횟수가 홀수번이라면
                 if(arr[i][j]){
-                    // 오른쪽
+                    // 오른쪽에 1회 추가
                     dp[i][j+1] += 1;
                 } else {
-                    // 아래쪽
+                    // 아래쪽에 1회 추가
                     dp[i+1][j] += 1;
                 }
 
