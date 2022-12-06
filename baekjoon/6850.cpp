@@ -85,20 +85,19 @@ int main(){
     // 컨벡스 헐 만들기 done
     // 이제 울타리 내 넓이를 구하면 됨
 
-    // (x1, y1) (x2, y2) (x3, y3) 삼각형의 넓이를 구하는 공식은
-    // |(x2-x1)(y3-y1)-(x3-x1)(y2-y1)| / 2
+    // ccw를 통해 삼각형의 넓이를 구할 수 있음
+
     // 볼록 다각형의 넓이는 여러개의 삼각형으로 다각형을 쪼갠 후 더해주면 됨
-    // 따라서 한 점 P(x1, y1)과
-    // 여러 번의 두 점 I(xi, yi), J(xj, yj)로 만들어진 삼각형을 계속해서 더해주면 됨
+    // 따라서 한 점 P를 고정하고, 두 점 X와 Y를 계속 순회하면서 더해주면 됨
 
     ll size = 0;
 
     for(int i = 0; i < stack.size()-1; i++){
-        size += (stack[i][0]*stack[i+1][1] - stack[i][1]*stack[i+1][0]);
+        // size += ccw(stack[0], stack[i], stack[i+1]) / 2;
+        size += (stack[i][0]*stack[i+1][1] - stack[i][1]*stack[i+1][0]) / 2;
     } 
 
-    // 위에서 넓이 구할 때 / 2 안해줬으므로 여기서 /100으로 계산
-    std::cout << size/100 << '\n';
+    std::cout << size/50 << '\n';
     
     return 0;
 }
