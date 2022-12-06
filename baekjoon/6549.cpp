@@ -28,7 +28,7 @@ int main(){
         ll ans = 0;
         std::stack<int> stck;
 
-        if(N == 0){
+        if(N == 0){ // 0 입력시 종료
             break;
         }
 
