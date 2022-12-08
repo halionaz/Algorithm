@@ -41,6 +41,7 @@ int main(){
         //     }
         // }
 
+        // 따라서 미리 각 순서에 대한 index를 저장해 놓은 후, 바로 반환
         dp[i] = dp[ind[order[i] - 1]] + 1;
 
         lis = std::max(lis, dp[i]);

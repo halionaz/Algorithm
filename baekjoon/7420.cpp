@@ -1,5 +1,10 @@
 // 맹독 방벽
-// 볼록 껍질
+// 볼록 껍질 & 기하학
+// ccw 알고리즘 & 그라함 스캔 알고리즘
+
+// 모든 건물을 아우르는 컨벡스 헐을 구한 후,
+// 그 컨벡스 헐을 감싸는 맹독 방벽의 길이를 구하면 됨
+// 맹독 방벽의 길이는 컨벡스 헐의 길이 + 각 모서리 각에 대한 원 둘레
 
 #include <iostream>
 #include <vector>
@@ -56,7 +61,9 @@ int main(){
         arr.push_back(vec);
     }
 
+    // 기준점 정하기
     std::sort(arr.begin(),arr.end(), cmp1);
+    // 기준을 제하고 나머지 반시계 방향 정렬
     std::sort(arr.begin()+1, arr.end(), cmp2);
 
     stack.push_back(arr[0]);
@@ -79,6 +86,8 @@ int main(){
 
     }
 
+    // 컨벡스 헐을 다 구했으므로 장벽의 길이를 구하면 됨
+
     int barrier = stack.size();
 
     double ans = 0;
@@ -94,7 +103,7 @@ int main(){
 
         ll innerDot = (prev[0]-cur[0])*(next[0]-cur[0]) + (prev[1]-cur[1])*(next[1] - cur[1]);
         double angle = 3.1415926535 -  std::acos((double)innerDot / dist1 / dist2); // 180도에서 각 빼기
-        ans += L * angle;
+        ans += L * angle; // 거리에 대해 모서리 부분 원형 둘레 길이 추가
     }
 
     std::cout << std::round(ans) << '\n';

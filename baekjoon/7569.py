@@ -6,7 +6,7 @@ from collections import deque
 input = sys.stdin.readline
 def main():
     M,N,H = map(int,input().split())
-    inven = []
+    inven = [] # 3차원 배열
     vx = (1,-1,0,0,0,0)
     vy = (0,0,1,-1,0,0)
     vz = (0,0,0,0,1,-1)
@@ -16,11 +16,14 @@ def main():
             arr.append(list(map(int,input().split())))
         inven.append(arr)
     queue = deque([])
+
+    # 처음에 익은 토마토가 자리한 위치 저장
     for i in range(H) :
         for j in range(N) :
             for l in range(M) :
                 if inven[i][j][l] == 1:
                     queue.append((i,j,l))
+    
     while len(queue) > 0 :
         z, y, x = queue.popleft()
         for i in range(6) :

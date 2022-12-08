@@ -25,7 +25,7 @@ def main() :
                 newj = j + vj[l]
                 if 0<=newi<I and 0<=newj<I and board[newi][newj] == -1:
                     queue.append((newi,newj))
-                    board[newi][newj] = board[i][j]+1
+                    board[newi][newj] = board[i][j] + 1
         print(board[z][h])
 
 main()
