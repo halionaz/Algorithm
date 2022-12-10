@@ -45,6 +45,7 @@ int main(){
     }
 
     for(int i = 0; i < M[0] - K + 1; i++){
+        // 첫 프로그램에서 바이러스 코드가 될 수 있는 애들 추리기
 
         std::vector<int> pi = getPi(i);
         bool ans = true;

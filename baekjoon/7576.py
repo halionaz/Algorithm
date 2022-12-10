@@ -4,13 +4,16 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
+
 M,N = map(int,input().split())
 inven = [list(map(int,input().split())) for _ in range(N)]
+
 queue = deque([])
 for i in range(N) :
     for j in range(M) :
-        if inven[i][j] == 1:
+        if inven[i][j] == 1: # 익은 토마토만 미리 큐에 추가
             queue.append((i,j))
+
 while len(queue) > 0 :
     y,x = queue.popleft()
     plus = inven[y][x] + 1
@@ -26,6 +29,7 @@ while len(queue) > 0 :
     if x-1 >= 0 and inven[y][x-1] == 0:
         inven[y][x-1] += plus
         queue.append((y,x-1))
+
 isDone = True
 ans = -2
 for i in inven :

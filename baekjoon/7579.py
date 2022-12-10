@@ -18,11 +18,11 @@
 
 # 1차원 배열로 구현
 
-N,M= map(int,input().split())
+N, M= map(int,input().split())
 m = list(map(int,input().split()))
 c = list(map(int,input().split()))
 maximum = sum(c)
-memo = [0]*(maximum+1)
+memo = [0]*(maximum+1) # 비용이 i 들 때 최대로 많이 비울 수 있는 메모리
 for i in range(N) :
     for j in reversed(range(maximum+1)) :
         if c[i] <= j :
