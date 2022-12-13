@@ -8,10 +8,13 @@ rr1 = r1**2
 rr2 = r2**2
 ans = 0
 if(dist>r1+r2) :
+    # 겹쳐지지 않음
     ans = 0
 elif dist <= r1-r2 :
+    # 2가 1안에 포함되어 있음
     ans = math.pi * rr2
 elif dist <= r2-r1 :
+    # 1이 2안에 포함되어 있음
     ans = math.pi * rr1
 else :
     t = 2*(math.acos((rr2+dist**2-rr1)/(2*r2*dist)))

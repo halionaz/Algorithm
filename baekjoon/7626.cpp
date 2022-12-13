@@ -1,6 +1,8 @@
 // 직사각형 
 // 스위핑 & 세그먼트 트리 & 값 / 좌표압축
 
+// 3392와 유사함
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
