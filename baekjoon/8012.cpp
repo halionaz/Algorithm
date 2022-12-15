@@ -1,6 +1,8 @@
 // 한동이는 영업사원!
 // 최소 공통 조상
 
+// 트리로 이어져있는 노드들 사이에서 각 노드를 최단거리로 이동해야 함
+
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -35,7 +37,11 @@ int main(){
         road[b].push_back(a);
     }
     depth[1] = 0;
+
+    // 트리 만들기
     makeTree(1);
+
+    // sparse tree 만들기
     for(int i = 0; i < log; i++){
         for(int j = 1; j <= N; j++){
             if(parents[i][j] != -1){
@@ -46,7 +52,9 @@ int main(){
 
     int M;
     int ans = 0;
+
     std::cin >> M;
+
     int prev = 1;
     while(M--){
         // a to b
@@ -55,6 +63,8 @@ int main(){
 
         int a = prev;
         int b = next;
+
+        // a -> b 최단 경로 구하기
 
         if(depth[a] < depth[b]){
             int tmp = a;

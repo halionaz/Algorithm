@@ -2,11 +2,15 @@
 # 문자열 & 스택
 
 # 스택으로 구현
+
 T = int(input())
+
 for _ in range(T) :
+
     inp = input()
     stack = []
     isVPS = True
+    
     for i in inp :
         if i == '(' :
             stack.append(1)
