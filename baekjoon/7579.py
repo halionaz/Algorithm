@@ -1,5 +1,6 @@
 # 앱
 # 다이나믹 프로그래밍 & 배낭 문제
+# bottom-up
 
 # N,M= map(int,input().split())
 # m = list(map(int,input().split()))

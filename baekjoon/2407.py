@@ -1,5 +1,6 @@
 # 조합
 # 다이나믹 프로그래밍
+# bottom-up
 
 n,m = map(int,input().split())
 dp = [1] * (n+1)
