@@ -50,7 +50,7 @@ void dfs(int x, int y, Node &cur, std::string str){
             if(l > maxLen){
                 maxLen = l;
                 maxLenWord = str;
-                // std::cout << str << '\n';
+
             } else if (l == maxLen){
                 if(str < maxLenWord){
                     maxLenWord = str;
@@ -104,11 +104,13 @@ int main(){
         maxLen = 0;
         wordCnt = 0;
         wordVisited.clear();
+
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 std::cin >> board[i][j];
             }
         }
+
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 memset(visited,false,sizeof(visited));
@@ -119,6 +121,7 @@ int main(){
                 }
             }
         }
+        
         std::cout << point << ' ' << maxLenWord << ' ' << wordCnt << '\n';
     }
 
