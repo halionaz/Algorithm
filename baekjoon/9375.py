@@ -17,4 +17,4 @@ for _ in range(T) :
     ans = 1
     for i in numArr :
         ans *= i+1
-    print(ans-1)
+    print(ans-1) # 알몸인 상태만 제외
