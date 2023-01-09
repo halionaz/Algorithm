@@ -1,9 +1,12 @@
 # 스티커
 # 다이나믹 프로그래밍
+# bottom-up
 
 import sys
 input = sys.stdin.readline
+
 T = int(input())
+
 for _ in range(T) :
     n = int(input())
     sticker = [[0]]

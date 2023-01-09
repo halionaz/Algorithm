@@ -4,7 +4,9 @@
 import sys
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
+
 T = int(input())
+
 def dfs(x) :
     global result
     visited[x] = 1
@@ -12,10 +14,13 @@ def dfs(x) :
     next = point[x]
     if visited[next] :
         if next in cycle :
+            # next가 이미 사이클에 속해있다면
+            # next 이후에 사이클에 추가된 애들만 찐 사이클임
             result += cycle[cycle.index(next):]
         return
     else :
         dfs(next)
+
 for _ in range(T) :
     n = int(input())
     point = [0] + list(map(int,input().split()))
