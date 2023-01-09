@@ -3,6 +3,11 @@
 
 // 최솟값, 최댓값 세그먼트 트리
 
+// i ~ j 구간의 DVD 최솟값이 i이고 최댓값이 j라면
+// 무조건 그 구간에는 손님이 원하는 DVD가 전부 존재한다고 봐도 됨
+// 진상 손님이 DVD를 빼가는 것이 아닌 이상 i ~ j 구간에는 그 숫자 만큼의 DVD가 있고
+// 최솟값과 최댓값이 각각 i와 j라는 것은 i ~ j의 DVD가 그 구간에 있다는 것임
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -100,9 +105,6 @@ int main(){
     while(T--){
         maxTree.clear();
         minTree.clear();
-        // for(int i = 0; i < 100000; i++){
-        //     arr[i] = i;
-        // }
 
         std::cin >> N >> K;
 

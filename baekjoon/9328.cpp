@@ -75,7 +75,7 @@ int main(){
                         } else if ('A' <= next && next <= 'Z'){
                             // 문
                             if(key[next - 'A']){
-                                // 탐색
+                                // 문을 열 수 있으므로, 탐색
                                 que.push(std::make_pair(newX,newY));
                             } else {
                                 // 나중을 도모
@@ -86,7 +86,7 @@ int main(){
                             if(!key[next - 'a']){
                                 key[next - 'a'] = 1;
                                 while(!door[next - 'a'].empty()){
-                                    // 이 열쇠를 필요로 하는 문이 있다면
+                                    // 이 열쇠를 필요로 하는 문을 전에 들렀다면
                                     que.push(door[next - 'a'].front());
                                     door[next - 'a'].pop();
                                 }

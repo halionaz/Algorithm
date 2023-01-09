@@ -8,7 +8,9 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
+
 T = int(input())
+
 for _ in range(T) :
     N,M = map(int,input().split())
     line = [[] for _ in range(N+1)]

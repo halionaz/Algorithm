@@ -2,6 +2,7 @@
 # 조합론
 
 T = int(input())
+
 for _ in range(T) :
     n = int(input())
     kindArr = []
