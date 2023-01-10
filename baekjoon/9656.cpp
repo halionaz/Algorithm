@@ -12,7 +12,7 @@ int main(){
 
     std::cin >> N;
 
-    std::cout << (N%2 == 0 ? "SK" : "CY") << "\n";
+    std::cout << (N % 2 == 0 ? "SK" : "CY") << "\n";
 
     return 0;
 }
