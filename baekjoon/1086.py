@@ -2,12 +2,12 @@
 # 다이나믹 프로그래밍 & 비트마스킹 & 비트필드를 이용한 다이나믹 프로그래밍
 # top-down
 
-# 시발 너무 어렵다
 # 비트마스킹 거의 끝판왕
 
 import sys
 import math
 input=sys.stdin.readline
+
 def dfs(L,visit,rest):
     if visit==(1<<N)-1:
         if rest==0:
@@ -21,15 +21,23 @@ def dfs(L,visit,rest):
         if visit&(1<<i)==0:
             dp[visit][rest]+=dfs(L+long[i],visit|(1<<i),(rest+rm[i][L])%k)
     return dp[visit][rest]
+
 N=int(input())
 arr=[]
+
 for _ in range(N):
     arr.append(int(input()))
-long=[]
+
+long=[] # 수의 자릿수 저장
+
 for i in arr:
     long.append(len(str(i)))
+
 k=int(input())
+
 dp=[[-1]*k for _ in range(1<<N)]
+# dp[i][j] :: 
+
 rm = [[-1]*(sum(long)) for _ in range(N)]
 for i in range(N):
     for j in range(sum(long)):
