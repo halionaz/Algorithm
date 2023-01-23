@@ -21,8 +21,8 @@ std::priority_queue<std::pair<double, int> > pq;
 // pq.top().first :: 가장 큰 친구의 무게
 // pq.top().second :: 가장 큰 친구의 인덱스
 std::vector<std::pair<double, int> > carrots; 
-// cakes[i].first :: i번째 인덱스 당근의 원래 무게
-// cakes[i].second :: i번째 인덱스 당근의 분할 수
+// carrots[i].first :: i번째 인덱스 당근의 원래 무게
+// carrots[i].second :: i번째 인덱스 당근의 분할 수
 
 int main(){
 
