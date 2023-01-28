@@ -5,9 +5,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
+
 int n;
 std::string s(360000,'0');
 std::string p(360000,'0');
+
 std::vector<int> findPi(std::string P){
     int M = P.length();
     std::vector<int> pi(M,0);
@@ -27,6 +29,7 @@ std::vector<int> findPi(std::string P){
     }
     return pi;
 }
+
 int kmp(std::string S, std::string P){
     int n = S.length(), m = P.length();
     std::vector<int> pi = findPi(P);
@@ -48,23 +51,33 @@ int kmp(std::string S, std::string P){
     }
     return result;
 }
+
 int main(){
+
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+
     std::cin >> n;
+
     for(int i = 0; i < n; i++){
         int tmp;
         std::cin >> tmp;
         s[tmp] = '1';
     }
+
     for(int i = 0; i<n; i++){
         int tmp;
         std::cin >> tmp;
         p[tmp] = '1';
     }
+
     std::string checkS = s+s;
+
     if(kmp(checkS,p)){
         std::cout << "possible" << '\n';
     } else {
         std::cout << "impossible" << '\n';
     }
+
     return 0;
 }
