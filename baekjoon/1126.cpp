@@ -20,6 +20,7 @@ int search(int ind, int diff){
     }
 
     if(ind == N && !diff){
+        // 모든 인덱스를 돌았고, 두 탑의 높이 차이가 0임
         return 0;
     }
 
@@ -27,18 +28,20 @@ int search(int ind, int diff){
         return dp[ind][diff];
     }
 
-    dp[ind][diff] = std::max(minInf, search(ind+1,diff));
     // 쓰지 않을 때
+    dp[ind][diff] = std::max(minInf, search(ind+1,diff));
 
+    // 높은 탑에 ind번째 조각을 올려놓을 때
     dp[ind][diff] = std::max(dp[ind][diff], search(ind+1, diff + arr[ind]));
-    // 높은 탑에 올려놓을 때
 
+    // 낮은 탑에 ind번째 조각을 올려놓을 때
     if(diff > arr[ind]){
+        // 기존 두 탑 높이 차보다 ind번째 조각이 더 작다면
         dp[ind][diff] = std::max(dp[ind][diff], arr[ind] + search(ind+1, diff - arr[ind]));
     } else {
+        // 기존 두 탑 높이 차보다 ind번째 조각이 더 크다면
         dp[ind][diff] = std::max(dp[ind][diff], diff + search(ind+1, arr[ind] - diff));
     }
-    // 낮은 탑에 올려놓을 때
 
     return dp[ind][diff];
 }
