@@ -42,11 +42,13 @@ int main(){
             }
         }
 
-        if(valuableSpells.size() == 0){
-            // 버는게 없으므로 0 출력
-            std::cout << "Case #" << t << ": " << 0 << '\n';
-            continue;
-        }
+        // 생각해보니 어차피 valuableSpells vector의 크기가 0이라면
+        // 아래 순열 반복문이 돌아가지 않아 답이 0이 나올 것이므로 따로 조건을 뺄 필요가 없음
+        // if(valuableSpells.size() == 0){
+        //     // 버는게 없으므로 0 출력
+        //     std::cout << "Case #" << t << ": " << 0 << '\n';
+        //     continue;
+        // }
 
         // 계산 전 버는게 없는 주문들은 다 시전해버렸다고 가정
 
