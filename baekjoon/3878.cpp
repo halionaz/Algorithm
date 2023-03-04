@@ -8,8 +8,12 @@
 
 struct dot{
     int x, y;
-    bool operator>(dot a) { return std::make_pair(x, y) > std::make_pair(a.x, a.y); }
-    bool operator<=(dot a) { return std::make_pair(x, y) <= std::make_pair(a.x, a.y); }
+    bool operator>(dot a){
+        return std::make_pair(x, y) > std::make_pair(a.x, a.y); 
+    }
+    bool operator<=(dot a){ 
+        return std::make_pair(x, y) <= std::make_pair(a.x, a.y); 
+    }
 };
 
 dot standard;
