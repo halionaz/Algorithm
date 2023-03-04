@@ -6,10 +6,8 @@
 #include <vector>
 #include <algorithm>
 
-typedef long long ll;
-
 struct dot{
-    ll x, y;
+    int x, y;
     bool operator>(dot a) { return std::make_pair(x, y) > std::make_pair(a.x, a.y); }
     bool operator<=(dot a) { return std::make_pair(x, y) <= std::make_pair(a.x, a.y); }
 };
@@ -17,8 +15,8 @@ struct dot{
 dot standard;
 std::vector<dot> blackDots, whiteDots;
 
-ll ccw(dot A, dot B, dot C) {
-    ll val = (B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y);
+int ccw(dot A, dot B, dot C) {
+    int val = (B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y);
     if(val > 0){
         return 1;
     } else if(val == 0){
@@ -37,7 +35,7 @@ bool cmp1(dot n1, dot n2){
 }
 
 bool cmp2(dot n1, dot n2){
-    ll cp = ccw(standard, n1, n2);
+    int cp = ccw(standard, n1, n2);
     if(cp){
         return cp > 0;
     } else {
@@ -91,7 +89,7 @@ std::vector<dot> getHull(std::vector<dot> &dots){
 
 bool isInner(std::vector<dot> &dots, dot &p) {
 
-    ll dotCCW = ccw(dots[0], dots[1], p);
+    int dotCCW = ccw(dots[0], dots[1], p);
 
     for (int i = 1; i < dots.size(); i++) {
         if (dotCCW * ccw(dots[i], dots[(i + 1) % dots.size()], p) <= 0){
@@ -104,8 +102,8 @@ bool isInner(std::vector<dot> &dots, dot &p) {
 bool isCross(dot L11, dot L12, dot L21, dot L22){
     // 선분 L1과 선분 L2의 선분 교차성 판단
 
-    ll case1 = ccw(L11, L12, L21) * ccw(L11, L12, L22);
-    ll case2 = ccw(L21, L22, L11) * ccw(L21, L22, L12);
+    int case1 = ccw(L11, L12, L21) * ccw(L11, L12, L22);
+    int case2 = ccw(L21, L22, L11) * ccw(L21, L22, L12);
 
     if(case1 == 0 && case2 == 0){
         // L1, L2가 평행하거나, L1, L2가 한 점에 맞닿아 있음
