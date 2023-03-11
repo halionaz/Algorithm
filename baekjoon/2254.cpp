@@ -3,20 +3,25 @@
 // ccw 알고리즘 & 그라함 스캔 알고리즘
 
 #include <iostream>
-#include <utility>
 #include <vector>
+#include <utility>
 #include <algorithm>
 
-struct dot{
-    int x, y;
+typedef long long ll;
 
-    bool operator==(const dot A){
-        return (A.x == x && A.y == y);
+struct dot{
+    ll x, y;
+
+    bool operator==(const dot &input){
+        return (x == input.x) && (y == input.y);
     }
+
 };
 
+dot standard;
+
 int ccw(dot A, dot B, dot C) {
-    int val = (B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y);
+    ll val = (B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y);
     if(val > 0){
         return 1;
     } else if(val == 0){
@@ -26,18 +31,6 @@ int ccw(dot A, dot B, dot C) {
     }
 }
 
-bool isInner(std::vector<dot> &dots, dot &p) {
-
-    int dotCCW = ccw(dots[0], dots[1], p);
-
-    for (int i = 1; i < dots.size(); i++) {
-        if (dotCCW * ccw(dots[i], dots[(i + 1) % dots.size()], p) <= 0){
-            return false;
-        }
-    }
-    return true;
-}
-
 bool cmp1(dot n1, dot n2){
     if(n1.y == n2.y){
         return n1.x < n2.x;
@@ -45,8 +38,6 @@ bool cmp1(dot n1, dot n2){
         return n1.y < n2.y;
     }
 }
-
-dot standard;
 
 bool cmp2(dot n1, dot n2){
     int cp = ccw(standard, n1, n2);
@@ -101,42 +92,57 @@ std::vector<dot> getHull(std::vector<dot> &dots){
 
 };
 
-int N;
-dot P;
-std::vector<dot> fences;
+bool isInner(std::vector<dot> &dots, dot &p) {
 
-int main(){
+    int dotCCW = ccw(dots[0], dots[1], p);
 
-    std::ios_base::sync_with_stdio(0);
-    std::cin.tie(0);
-
-    std::cin >> N >> P.x >> P.y;
-
-    fences.resize(N);
-
-    for(int i = 0; i < N; i++){
-        std::cin >> fences[i].x >> fences[i].y;
+    for (int i = 1; i < dots.size(); i++) {
+        if (dotCCW * ccw(dots[i], dots[(i + 1) % dots.size()], p) <= 0){
+            return false;
+        }
     }
+    return true;
+}
 
-    int ans = 0;
+std::vector<dot> dots;
 
-    while(fences.size() >= 3){
+int main(void) {
 
-        std::vector<dot> fence = getHull(fences);
+	std::cin.tie(0);
+	std::ios::sync_with_stdio(0);
 
-        if(isInner(fence, P)){
-            ans += 1;
-            for(int i = 0; i < fence.size(); i++){
-                fences.erase(std::find(fences.begin(), fences.end(), fence[i]));
+	int N;
+	std::cin >> N;
+
+	dot cow;
+	std::cin >> cow.x >> cow.y;
+
+	for (int i = 0; i < N; i++) {
+        dot X;
+		std::cin >> X.x >> X.y;
+		dots.push_back(X);
+	}
+	
+	int ans = 0;
+
+	while (true) {
+		// 더이상 볼록 껍질을 만들 수 없으면 종료
+		if (dots.size() < 3) break;
+
+		std::vector<dot> hull = getHull(dots);
+
+		//볼록 껍질 내부에 감옥이 있는지 확인
+		if (isInner(hull, cow)) {
+			ans += 1;
+			// dots에서 hull에 포함된 점 제거
+			for (int i = 0; i < hull.size(); ++i){
+				dots.erase(find(dots.begin(), dots.end(), hull[i]));
             }
-        } else {
-            // 감옥을 담장으로 두를 수 없음
+		} else {
             break;
         }
+	}
 
-    }
-
-    std::cout << ans << '\n';
-
-    return 0;
+	std::cout << ans << '\n';
+	return 0;
 }
