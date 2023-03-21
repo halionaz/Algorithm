@@ -15,13 +15,13 @@
 const int max_num = 32;
 
 int N, M, ind;
+// a번째 부부 :: aw = 2*(a+1)-1, ah = 2*(a+1)
 int scc[max_num*2];
+std::vector<int> sccArr[max_num*2];
 int sccBool[max_num*2];
 bool visited[max_num*2];
-// a번째 부부 :: aw = 2*(a+1)-1, ah = 2*(a+1)
 std::vector<int> line[max_num*2];
 std::vector<int> rev_line[max_num*2];
-std::vector<int> sccArr[max_num*2];
 std::stack<int> stck;
 
 void dfs(int cur){
@@ -66,11 +66,14 @@ int main(){
             break;
         }
 
-        // 보람이는 무조건 1, 즉 철승이는 무조건 0
-        // 앞으로 모든 불륜 관계인 사람 두명 다 1이거나, 한명만 0이어야 함
-        // 즉, 불륜 관계인 두 사람 모두가 0일 수는 없음
+        // 철승이가 앉은 쪽은 0, 보람이가 앉은 쪽을 1로 정의
+        // 부부 관계는 어차피 다른 쪽에 앉아야 하므로 한쪽이 0이면 다른쪽은 1임
+        // 앞으로 모든 불륜 관계인 커플은 두명이 모두 철승이 쪽에 앉아있으면 안됨
+        // 즉 불륜 커플은 한쪽이 0이면 다른 한쪽은 무조건 1이어야 함 (2-sat)
 
-        // 보람이가 1이어야 하므로 보람∨보람 도 관계식에 추가
+        // 문제 전제 상 보람이(인덱스 1)은 무조건 1이어야 하므로
+        // (보람 or 보람) 관계 식을 전처리로 추가
+        // (보람이 0 인 경우 무조건 보람은 1)
         line[2].push_back(1);
         rev_line[1].push_back(2);
 
@@ -122,7 +125,10 @@ int main(){
         if(!canAns){
             std::cout << "bad luck\n";
         } else {
+            // 보람이 쪽에 앉을 사람들 선별
+
             memset(sccBool, -1, sizeof(sccBool));
+
             for(int i = 0; i <= ind; i++){
                 if(sccBool[i] == -1){
                     sccBool[i] = 0;
