@@ -1,5 +1,6 @@
 // 2-SAT - 4
 // 강한 연결 요소 & 2-sat
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -49,10 +50,14 @@ int main(){
     for(int i = 0; i < M; i++){
         int a,b;
         std::cin >> a >> b;
+        // 조건 a, b에 대해서
         a = a < 0 ? (-a)*2 : a*2-1;
         b = b < 0 ? (-b)*2 : b*2-1;
+
+        // ~a이면 b
         line[a%2?a+1:a-1].push_back(b);
         reverseLine[b].push_back(a%2?a+1:a-1);
+        // ~b이면 a
         line[b%2?b+1:b-1].push_back(a);
         reverseLine[a].push_back(b%2?b+1:b-1);
     }
@@ -81,6 +86,7 @@ int main(){
 
     for(int i = 1; i <= N; i++){
         if(scc[i*2-1] == scc[i*2]){
+            // 모순이 생기므로 f를 true로 만들 수 없음
             std::cout << 0 << '\n';
             return 0;
         }
@@ -88,6 +94,7 @@ int main(){
 
     std::cout << 1 << '\n';
     memset(sccBool, -1, sizeof(sccBool));
+
     for(int i = 0; i <= ind; i++){
         if(sccBool[i] == -1){
             sccBool[i] = 0;
@@ -99,9 +106,11 @@ int main(){
             }
         }
     }
+
     for(int i = 1; i <= N; i++){
         std::cout << sccBool[scc[i*2-1]] << ' ';
     }
+    
     std::cout << '\n';
 
     return 0;
