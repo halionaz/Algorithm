@@ -1,8 +1,6 @@
 // ATM
 // 강한 연결 요소 & 다이나믹 프로그래밍
-
-// SCC + 코사리주 + DP + 그래프 탐색...
-// 상당히 많은 알고리즘이 복합적으로 쓰이는 문제
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -66,10 +64,14 @@ int main(){
         line[a].push_back(b);
         reverseLine[b].push_back(a);
     }
+
     for(int i = 0; i < N; i++){
         std::cin >> cash[i+1];
     }
+
     std::cin >> S >> P;
+
+    // SCC 묶기
 
     memset(visited,false,sizeof(visited));
 
@@ -99,13 +101,19 @@ int main(){
     std::queue<int> q;
     q.push(scc[S]);
     dp[scc[S]] = sccCash[scc[S]];
+
     int ans = 0;
+
     while(!q.empty()){
+
         int cur = q.front();
         q.pop();
+
         if(rest[cur]){
+            // 현재 포인트에 접근 가능한 레스토랑이 있음
             ans = dp[cur] > ans ? dp[cur] : ans;
         }
+
         for(int i = 0; i < sccLine[cur].size(); i++){
             if(dp[cur] + sccCash[sccLine[cur][i]] > dp[sccLine[cur][i]]){
                 dp[sccLine[cur][i]] = dp[cur] + sccCash[sccLine[cur][i]];
@@ -113,6 +121,7 @@ int main(){
             }
         }
     }
+
     std::cout << ans << '\n';
 
     return 0;
