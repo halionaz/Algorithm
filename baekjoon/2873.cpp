@@ -1,5 +1,5 @@
 // 롤러코스터
-// 그리디 알고리즘 & 구성적
+// 그리디 알고리즘 & 해 구성하기
 
 #include <iostream>
 #include <string>
