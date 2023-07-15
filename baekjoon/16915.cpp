@@ -1,5 +1,6 @@
 // 호텔 관리
 // 2-sat & 강한 연결 요소
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -50,7 +51,7 @@ int main(){
     }
 
     for(int i = 1; i <= M; i++){
-        int K,x;
+        int K, x;
         std::cin >> K;
         for(int j = 0; j < K; j++){
             std::cin >> x;
