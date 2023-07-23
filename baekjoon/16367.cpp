@@ -1,5 +1,6 @@
 // TV Show Game
 // 강한 연결 요소 & 2-sat
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <stack>
@@ -87,6 +88,7 @@ int main(){
 
     for(int i = 1; i <= k; i++){
         if(scc[i*2-1] == scc[i*2]){
+            // 모순 발생
             std::cout << -1 << '\n';
             return 0;
         }
