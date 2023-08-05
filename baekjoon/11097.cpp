@@ -1,5 +1,6 @@
 // 도시 계획
 // 강한 연결 요소 & 플로이드-워셜
+// 코사라주 알고리즘
 
 // 같은 scc끼리 묶은 후,
 // 같은 scc 안에서 최소 간선을 선택하면 서로 다 이어짐
@@ -34,6 +35,7 @@ void dfs(int cur){
     }
     stck.push(cur);
 }
+
 void rev_dfs(int cur){
     visited[cur] = true;
     scc[cur] = ind;
@@ -107,6 +109,7 @@ int main(){
                 }
 
                 // 한 scc 내 간선 연결
+                // 단순하게 0 -> 1 -> 2 -> ... -> N -> 0 으로 이어줌
                 if(scc_vec[i].size() > 1){
                     if(j > 0){
                         std::vector<int> vec(2);
@@ -136,7 +139,7 @@ int main(){
             }
         }
 
-        // 남은 간선 답에 추가
+        // scc간 간선 답에 추가
         for(int i = 0; i < ind; i++){
             for(int j = 0; j < ind; j++){
                 if(scc_line[i][j]){
