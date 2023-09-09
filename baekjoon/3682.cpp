@@ -1,5 +1,6 @@
 // 동치 증명
 // 강한 연결 요소
+// 코사라주 알고리즘
 
 #include <iostream>
 #include <vector>
@@ -43,6 +44,7 @@ int main(){
 
     while(T--){
 
+        // 변수 초기화
         ind = 0;
         for(int i = 0; i < 20001; i++){
             line[i].clear();
@@ -79,6 +81,7 @@ int main(){
         }
 
         if(ind == 1){
+            // 모든 명제들이 이미 동치로 묶여 있음
             std::cout << "0\n";
             continue;
         }
