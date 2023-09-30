@@ -2,6 +2,9 @@
 // 세그먼트 트리 & 다차원 세그먼트 트리 & 누적 합
 // 펜윅 트리
 
+// 세그트리를 2차원으로 세워야 하는데,
+// 메모리 제한 조건을 지키기 위해 펜윅트리로 풀어야 AC 가능
+
 #include <iostream>
 
 typedef long long ll;
@@ -22,7 +25,9 @@ void updateTree(int x, int y, ll val){
 }
 
 ll query(int x, int y){
+
     ll ret = 0;
+    
     while(x){
         int ty = y;
         while(ty){
