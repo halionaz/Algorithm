@@ -4,3 +4,6 @@
 ## ⚖️ Baekjoon Online Judge
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=halion)](https://solved.ac/halion)
+
+## 📚 Algorithm 2024 Spring Semester
+정순영 교수님 사랑합니다
