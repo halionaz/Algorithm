@@ -1,1 +1,9 @@
 .vscode/
+
+Algorithm_2024_Spring/*
+
+!.gitignore
+!*.cpp
+!*.c
+!*.py
+!*.md
