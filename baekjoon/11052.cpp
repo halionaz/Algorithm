@@ -2,6 +2,8 @@
 // 다이나믹 프로그래밍
 // bottom-up
 
+// 일반적으로 Rod Cutting 문제로 알려져 있음
+
 #include <iostream>
 #include <algorithm>
 
