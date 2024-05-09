@@ -58,6 +58,8 @@ print(ans)
 #         line[j].append((dist,i))
 # node = [0]
 # ans = 0
+
+# 이거 이런식으로 하지 말고, min_priority_queue 이용하면 더 효율적으로 구현 가능
 # while len(node) != n :
 #     minimumDist = INF
 #     minimumInd = -1
