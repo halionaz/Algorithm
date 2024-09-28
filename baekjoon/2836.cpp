@@ -40,6 +40,12 @@ int main(){
         }
     }
 
+    // 역방향 손님이 아무도 없는 경우
+    if(arr.size() == 0){
+        std::cout << M << '\n';
+        return 0;
+    }
+
     std::sort(arr.begin(),arr.end());
 
     start = arr[0][0];
