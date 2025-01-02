@@ -12,28 +12,28 @@
 // 따라서 부분수열에 연속적이지 않다면, 답이 구해지지 않음
 // 때문에 가장 긴 '연속하는' 부분 수열을 구해야 함
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
 int N, lis = 0;
-int order[1000001]; // 서 있는 순서대로 번호 정렬
-int ind[1000001]; // 원래 번호대로 서있는 순서 정렬
+int order[1000001];  // 서 있는 순서대로 번호 정렬
+int ind[1000001];    // 원래 번호대로 서있는 순서 정렬
 int dp[1000001];
 
-int main(){
-
+int main() {
     std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
 
     std::cin >> N;
 
-    for(int i = 0; i < N; i++){
+    ind[0] = 0;
+
+    for (int i = 0; i < N; i++) {
         std::cin >> order[i];
         ind[order[i]] = i;
     }
 
-    for(int i = 0 ; i<N; i++){
-
+    for (int i = 0; i < N; i++) {
         // 기존 방식으로 했더니 시간 초과 발생
         // dp[i] = 1;
         // for(int j = 0; j < i; j++){
@@ -43,7 +43,11 @@ int main(){
         // }
 
         // 따라서 미리 각 순서에 대한 index를 저장해 놓은 후, 바로 반환
-        dp[i] = dp[ind[order[i] - 1]] + 1;
+        if (order[i] == 1) {
+            dp[i] = 1;
+        } else {
+            dp[i] = dp[ind[order[i] - 1]] + 1;
+        }
 
         lis = std::max(lis, dp[i]);
     }
