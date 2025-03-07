@@ -1,6 +1,6 @@
 *
-!.gitignore
-!*.cpp
-!*.c
-!*.py
-!*.md
+!*.*
+!*/
+
+.DS_Store
+settings.json
